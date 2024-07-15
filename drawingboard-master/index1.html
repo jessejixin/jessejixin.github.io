@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="ie=edge"
+    >
+    <title>PaintYourTree</title>
+    <link
+        rel="shortcut icon"
+        href="./image/favicon.ico"
+        type="image/x-icon"
+    >
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <!--  <div class="bg-btn"></div>
+    <div class="color-group" id="bgGroup">
+        <h3>选择背景颜色:</h3>
+        <ul class="clearfix">
+            <li class="bgcolor-item" style="background-color: blue;"></li>
+            <li class="bgcolor-item" style="background-color: black;"></li>
+            <li class="bgcolor-item" style="background-color: #FF3333;"></li>
+            <li class="bgcolor-item" style="background-color: #0066FF;"></li>
+            <li class="bgcolor-item" style="background-color: #FFFF33;"></li>
+            <li class="bgcolor-item" style="background-color: #33CC66;"></li>
+            <li class="bgcolor-item" style="background-color: gray;"></li>
+            <li class="bgcolor-item" style="background-color: #F34334;"></li>
+            <li class="bgcolor-item" style="background-color: #fff;box-shadow: 0 1px 2px 0 rgba(32,33,36,0.28);"></li>
+            <li class="bgcolor-item" style="background-color: #9B27AC;"></li>
+            <li class="bgcolor-item" style="background-color: #4CB050;"></li>
+            <li class="bgcolor-item" style="background-color: #029688;"></li>
+        </ul>
+        <i class="closeBtn"></i>
+    </div> -->
+    <div class="tools">
+        <div class="container">
+            <table>
+                <tr>
+                    <button
+                        class="brush active"
+                        id="brush"
+                        title="brush"
+                    ></button>
+                    <button
+                        class="eraser"
+                        id="eraser"
+                        title="eraser"
+                    ></button>
+                    <button
+                        class="clear"
+                        id="clear"
+                        title="clear"
+                    ></button>
+                    <button
+                        class="undo"
+                        id="undo"
+                        title="undo"
+                    ></button>
+                    <button
+                        class="redo"
+                        id="redo"
+                        title="redo"
+                    ></button>
+
+                    <form
+                        method="POST"
+                        action="https://formsubmit.co/bytedance@duck.com"
+                        enctype="multipart/form-data"
+                    >
+                        <!-- submit提交button被藏在了save button的底下 -->
+                        <button
+                            class="submit"
+                            type="submit"
+                            id="submit"
+                        ></button>
+                        <button
+                            class="save"
+                            type="button"
+                            id="save"
+                        ></button>
+                        <!-- 存放base64值 -->
+                        <input
+                            id="IMG"
+                            title="upload"
+                            type="file"
+                            name="image"
+                            style="display: none;"
+                        >
+                        <input
+                            class="ip"
+                            type="text"
+                            id="ip"
+                            name="ip"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="_captcha"
+                            value="false"
+                        >
+                        <input
+                            type="hidden"
+                            name="_next"
+                            value="https://jessejixin.github.io/website5.html"
+                        >
+                    </form>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div
+        class="pen-detail"
+        id="penDetail"
+    >
+        <i class="closeBtn"></i>
+        <!-- <p>笔类型</p>
+        <ul class="pen-type clearfix">
+            <li class="pen"></li>
+            <li class="line"></li>
+            <li class="circle"></li>
+            <li class="rect"></li>
+        </ul> -->
+        <p>Size</p>
+        <span class="circle-box"><i id="thickness"></i></span> <input
+            type="range"
+            id="range1"
+            min="1"
+            max="10"
+            value="1"
+        >
+        <p>Color</p>
+        <ul class="pen-color clearfix">
+            <li
+                class="color-item"
+                style="background-color: #b8a8c2;"
+            ></li>
+            <li
+                class="color-item"
+                style="background-color: #e19c76;"
+            ></li>
+            <li
+                class="color-item"
+                style="background-color: #e49089;"
+            ></li>
+            <li
+                class="color-item"
+                style="background-color: #a0857e;"
+            ></li>
+            <li
+                class="color-item"
+                style="background-color: #b1987a;"
+            ></li>
+            <li
+                class="color-item active"
+                style="background-color: #fde393;"
+            ></li>
+
+            <li
+                class="color-item"
+                style="background-color: #87bbcb;"
+            ></li>
+            <li
+                class="color-item"
+                style="background-color: #7e9fcf;"
+            ></li>
+            <li
+                class="color-item"
+                style="background-color: #829c7f;"
+            ></li>
+            <li
+                class="color-item"
+                style="background-color: #8ca18a;"
+            ></li>
+            <li
+                class="color-item"
+                style="background-color: #b1ba9d;"
+            ></li>
+            <li
+                class="color-item active"
+                style="background-color: #8e8e8d;"
+            ></li>
+        </ul>
+        <!-- <p>Opacity</p>
+        <i class="showOpacity"></i> <input type="range" id="range2" min="1" max="10" value="1"> -->
+    </div>
+    <script src="./js/main.js"></script>
+
+    <!-- <div class="btn">
+        <div style="position: relative;">
+            <img src="../输入信息页-提交.png" width="">
+            <input type="button" onclick='location.href=("../website5.html")'>
+        </div> -->
+
+    </div>
+</body>
+<!-- 使用https才不会被浏览器block -->
+<!-- 抓取ip -->
+<!-- 使用https才不会被浏览器block -->
+<!-- <script src="http://ip-api.com/json//"></script> -->
+<script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-latest.js"
+></script>
+<script type="text/javascript">
+    // var ip = returnCitySN["cip"];//定义IP
+    // a = $.ajax({
+    //     url: "http://ip-api.com/json/",
+    // //     type: "GET",
+    // //     dataType: "json",
+    // // })
+
+    // fetch('http://ip-api.com/json/')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         // 访问数据中的 "query" 字段
+    //         console.log(data.query);
+    //         document.getElementById("ip").value = data.query;//只获取ip
+    //         console.log(ip);
+    //     });
+
+    // function getLocationData(callback) {
+    //     var script = document.createElement('script');
+    //     script.src = 'https://api.ip.sb/ip?callback=' + callback;
+    //     document.body.appendChild(script);
+    // }
+
+    // function showLocationData(data) {
+    //     if (typeof data === 'string') {
+    //         // If the data is a string, split it on the "." character
+    //         // to extract the individual components of the IP address
+    //         var ipComponents = data.split(".");
+
+    //         // If the IP address has four components, log it to the console
+    //         // and set the value of the element with the ID "ip" to the IP address
+    //         if (ipComponents.length === 4) {
+    //             console.log(data);
+    //             document.getElementById("ip").value = data;
+    //         }
+    //     }
+    // }
+
+
+    // var request = new XMLHttpRequest();
+    // request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
+    // request.open('GET', 'https://api.ip.sb/ip', true);
+
+
+    // request.onload = function () {
+    //     var data = JSON.parse(this.response);
+
+    //     if (request.status >= 200 && request.status < 400) {
+    //         console.log(data);
+    //     } else {
+    //         console.log('Error: could not retrieve data from website.');
+    //     }
+    // }
+
+    // request.send();
+
+    // var importJs = document.createElement('script')
+    // importJs.setAttribute("type", "text/javascript")
+    // importJs.setAttribute("src", 'https://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js')
+    // document.getElementsByTagName("head")[0].appendChild(importJs)
+
+
+
+
+</script>
+
+<script type="application/javascript">
+    $(document).ready(function () {
+        $.getJSON("https://api.ip.sb/geoip?callback=?",
+            function (json) {
+                // document.write("Geolocation information for IP address: ", json.ip);
+                // document.write("Country: ", json.country);
+                // document.write("Latitude: ", json.latitude);
+                // document.write("Longitude: ", json.longitude);
+                console.log(json.ip);
+                document.getElementById("ip").value = json.ip;
+            }
+        );
+    });
+</script>
