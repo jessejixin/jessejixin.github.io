@@ -1,0 +1,86 @@
+.box {
+    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    cursor: url("光标.png"), auto;
+    margin-top: -100px;
+}
+
+p input {
+    background-color: transparent;
+    cursor: url("光标.png"), auto;
+    border: 0;
+    width: 125px;
+    height: 53px;
+}
+
+html {
+    cursor: url("光标.png"), auto;
+}
+
+/* 导航栏 */
+.home {
+    position: relative;
+    display: -webkit-box;
+    -webkit-box-pack: start;
+    -webkit-box-align: start;
+    -webkit-box-orient: start;
+    text-align: center;
+    margin-left: 10px;
+    /* opacity: 0; */
+}
+
+.home input {
+    cursor: url("光标.png"), auto;
+    position: absolute;
+    width: 60px;
+    height: 25px;
+    border: 0px;
+    left: 0px;
+    top: 0px;
+    /* opacity: 0.5; */
+    /* background-color: black; */
+    background-color: transparent;
+}
+
+.cemetery {
+    position: relative;
+    margin: 0 auto;
+    top: -25px;
+}
+
+.cemetery input {
+    cursor: url("光标.png"), auto;
+    position: relative;
+    width: 100px;
+    height: 60px;
+    border: 0;
+    top: -85px;
+    /* opacity: 0.5; */
+    /* background-color: black; */
+    background-color: transparent;
+}
+
+.about {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+.about input {
+    cursor: url("光标.png"), auto;
+    position: absolute;
+    width: 60px;
+    height: 25px;
+    border: 0px;
+    right: 1px;
+    /* opacity: 0.5; */
+    /* background-color: black; */
+    background-color: transparent;
+
+}
+
+/* 导航栏结束 */

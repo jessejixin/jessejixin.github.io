@@ -1,0 +1,143 @@
+.input1 {
+    /* max-width: 100%; */
+    /* height: auto; */
+    /* float: left; */
+    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    cursor: url("光标.png"), auto;
+    /* justify-content: center; */
+
+}
+
+/* ip */
+p0 input {
+    outline: none;
+    /* 点击时的边框 */
+    background-color: transparent;
+    /* 背景颜色为透明 */
+    border: 0;
+    /* 未点击时的边框 */
+    opacity: 0;
+    width: 235px;
+    height: 30px;
+    cursor: url("光标.png"), auto;
+}
+
+/* Upload提示 */
+p input {
+    outline: none;
+    /* 点击时的边框 */
+    background-color: transparent;
+    /* 背景颜色为透明 */
+    border: 0;
+    /* 未点击时的边框 */
+    /* opacity: 0; */
+    width: 235px;
+    height: 30px;
+    cursor: url("光标.png"), auto;
+    /* 字体大小 */
+    font-size: 15px;
+    /* font-weight: bold; */
+    /* 旋转 */
+    transform: rotate(-1deg);
+}
+
+/* 进度条颜色修改，加个圆角 */
+progress {
+    width: 235px;
+    height: 23px;
+    /* border: none; */
+    /* border: 10px; */
+    border-radius: 20px;
+    overflow: hidden;
+    /* 一定要上面这行圆角才能起作用 */
+    color: grey;
+    transform: rotate(-1deg);
+}
+
+progress::-webkit-progress-bar {
+    background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+    background-color: gray;
+}
+
+p1 textarea {
+    resize: none;
+    outline: none;
+    background-color: transparent;
+    border: 0;
+    width: 330px;
+    height: 222px;
+    cursor: url("光标.png"), auto;
+
+    font-size: 20px;
+    color: gray;
+}
+
+h2 input {
+    background-color: red;
+    opacity: 0;
+    /* overflow: hidden; */
+    /* font-size: 0px; */
+    border: 20px;
+    width: 85px;
+    height: 40px;
+    cursor: url("光标.png"), auto;
+    /* display: none; */
+}
+
+/* input file上光标会变回去的解决方案 */
+/* https: //stackoverflow.com/questions/1537223/change-cursor-type-on-input-type-file */
+input[type=file]::-webkit-file-upload-button {
+    cursor: url("光标.png"), auto;
+}
+
+p3 button {
+    /* background-color: red; */
+    width: 145px;
+    height: 42px;
+    opacity: 0;
+    cursor: url("光标.png"), auto;
+}
+
+/* 上传完成icon */
+#CompleteIcon {
+    width: 40px;
+    position: absolute;
+    left: 730px;
+    top: 80px;
+    opacity: 0;
+}
+
+
+html {
+    cursor: url("光标.png"), auto !important;
+}
+
+/* #topic {
+    background-image: url("输入信息页-框框.png") no-repeat center;
+    font-size: 7px;
+    color: black !important;
+    /* border-radius: 12px; */
+/* background-position: 0px; */
+/* background-repeat: no-repeat;
+    display: inline-block;
+    color: #428bca;
+    width: 520px;
+    height: 100px !important; }*/
+
+/* input {
+    outline-style: auto;
+    border: 0px;
+} */
+/* 
+textarea {
+    outline-style: none;
+    border: 0px;
+} */
