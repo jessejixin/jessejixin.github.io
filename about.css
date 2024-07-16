@@ -16,73 +16,29 @@
 
 
 /* 导航栏 */
-.home {
-    position: relative;
-    display: -webkit-box;
-    -webkit-box-pack: start;
-    -webkit-box-align: start;
-    -webkit-box-orient: start;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.nav-container {
+    background-color: #ffff;
+    padding: 10px 0;
     text-align: center;
-    margin-left: 10px;
-    /* opacity: 0; */
+    display: flex;
+    justify-content: space-around;
 }
 
-.home input {
-    cursor: url("光标.png"), auto;
-    position: absolute;
-    width: 60px;
-    height: 25px;
-    border: 0px;
-    left: 0px;
-    top: 0px;
-    /* opacity: 0.5; */
-    /* background-color: black; */
-    background-color: transparent;
+.nav-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
 }
 
-.cemetery {
-    position: relative;
-    margin: 0 auto;
-    top: -25px;
-}
-
-.cemetery input {
-    cursor: url("光标.png"), auto;
-    position: relative;
-    width: 100px;
-    height: 60px;
-    border: 0;
-    top: -85px;
-    /* opacity: 0.5; */
-    /* background-color: black; */
-    background-color: transparent;
-}
-
-.about {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-}
-
-p1,
-p2,
-p3 {
-    font-family: "Gill Sans", sans-serif;
-    font-size: large;
-    color: gray;
-}
-
-.about input {
-    cursor: url("光标.png"), auto;
-    position: absolute;
-    width: 60px;
-    height: 25px;
-    border: 0px;
-    right: 1px;
-    /* opacity: 0.5; */
-    /* background-color: black; */
-    background-color: transparent;
-
+.nav-container a:hover {
+    background-color: #ddd;
 }
 
 /* 导航栏结束 */

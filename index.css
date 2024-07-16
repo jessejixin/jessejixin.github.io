@@ -1,86 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-container {
+    background-color: #ffff;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.nav-container a:hover {
+    background-color: #ddd;
+}
+
 .box {
-    white-space: nowrap;
-    display: -webkit-box;
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
-    -webkit-box-orient: vertical;
     text-align: center;
-    cursor: url("光标.png"), auto;
-    margin-top: -100px;
+    margin-top: 20px;
 }
 
-input {
-    background-color: transparent;
-    cursor: url("光标.png"), auto;
-    border: 0;
-    width: 125px;
-    height: 53px;
+.box img {
+    width: 960px;
+    /* Adjust as per your image size */
+    max-width: 100%;
+    height: auto;
 }
 
-html {
-    cursor: url("光标.png"), auto;
+.box p {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
 }
 
-/* 导航栏 */
-.home {
-    position: relative;
-    display: -webkit-box;
-    -webkit-box-pack: start;
-    -webkit-box-align: start;
-    -webkit-box-orient: start;
+.box input[type="button"] {
+    background-color: #a6a4a4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
     text-align: center;
-    margin-left: 10px;
-    /* opacity: 0; */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
-.home input {
-    cursor: url("光标.png"), auto;
-    position: absolute;
-    width: 60px;
-    height: 25px;
-    border: 0px;
-    left: 0px;
-    top: 0px;
-    /* opacity: 0.5; */
-    /* background-color: black; */
-    background-color: transparent;
+.box input[type="button"]:hover {
+    background-color: #4f4f4f;
 }
-
-.archive {
-    position: relative;
-    margin: 0 auto;
-    top: -25px;
-}
-
-.archive input {
-    cursor: url("光标.png"), auto;
-    position: relative;
-    width: 100px;
-    height: 60px;
-    border: 0;
-    top: -85px;
-    /* opacity: 0.5; */
-    /* background-color: black; */
-    background-color: transparent;
-}
-
-.about {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-}
-
-.about input {
-    cursor: url("光标.png"), auto;
-    position: absolute;
-    width: 60px;
-    height: 25px;
-    border: 0px;
-    right: 1px;
-    /* opacity: 0.5; */
-    /* background-color: black; */
-    background-color: transparent;
-
-}
-
-/* 导航栏结束 */
