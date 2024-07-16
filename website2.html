@@ -41,19 +41,6 @@
             // Implement your progress bar logic here if needed
         }
     </script>
-
-    <!-- 获取IP地址的 JavaScript 代码 -->
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $.getJSON("https://api.ip.sb/geoip?callback=?",
-                function (json) {
-                    console.log(json.ip);
-                    document.getElementById("ip").value = json.ip;
-                }
-            );
-        });
-    </script>
 </body>
 
 </html>

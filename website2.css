@@ -11,7 +11,7 @@ body {
 
 .input-box {
     padding: 20px;
-    max-width: 600px;
+    max-width: 500px;
     width: 100%;
     background-color: white;
 }
@@ -40,14 +40,15 @@ body {
     background-color: #b5b3b3;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 0; /* 调整按钮的内边距 */
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block; /* 将按钮设为块级元素 */
+    width: calc(100% - 400px); /* 减去内边距的宽度 */
+    margin: 10px auto; /* 居中按钮 */
     font-size: 16px;
-    margin-top: 10px;
     cursor: pointer;
-    width: 100%;
+    border-radius: 4px;
     box-sizing: border-box;
 }
 
