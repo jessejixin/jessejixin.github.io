@@ -9,211 +9,51 @@
     />
 </head>
 
-
 <body>
-    <div class="input1 ">
-        <form action="https://formsubmit.co/bytedance@duck.com"method="POST">
-            <div style="position:relative;">
-                <img
-                    src="./Image/website2.png"
-                    width="960px"
-                />
+    <div class="input-box">
+        <p>STEP 1: Please upload a photo of your bed</p>
+        <input type="file" id="file-uploader" name="attachment" accept="image/png, image/jpeg" />
 
-                <!-- 抓取ip -->
-                <!-- <p0>
-                    <input
-                        type="text"
-                        id="ip"
-                        name="ip"
-                        required=""
-                        style="position:absolute; left:350px;top:110px;"
-                    />
-                </p0> -->
+        <p>STEP 2: Please briefly describe the bed and your relationship to it.</p>
+        <textarea name="text" id="myTextArea" cols="30" rows="5" maxlength="240" placeholder="Describe your bed..."></textarea>
 
-                <!-- topic输入提示 -->
-                <p>
-                    <input
-                        type="text"
-                        required=""
-                        placeholder="Upload your tree's photo →"
-                        disabled="disabled"
-                        style="position:absolute; left:340px;top:110px;"
-                    />
-                </p>
-
-                <!-- 输入大框 textarea-->
-                <p1>
-                    <textarea
-                        type="textarea"
-                        name="text"
-                        id="myTextArea"
-                        cols="3"
-                        rows="5"
-                        required=""
-                        placeholder=""
-                        style="position:absolute; left:313px;top:217px;"
-                        maxlength="240"
-                    ></textarea>
-                </p1>
-
-                <!-- 附件 -->
-                <h2>
-                    <input
-                        type="file"
-                        id="file-uploader"
-                        name="attachment"
-                        accept="image/png, image/jpeg"
-                        style="position: absolute; left: 400px;top:78px; "
-                    />
-                    <!-- </a> -->
-
-                    <!-- 进度条 -->
-                    <!-- <label
-                        id="progress-label"
-                        for="progress"
-                    ></label>
-                    <progress
-                        id="progress"
-                        value="0"
-                        max="100"
-                        style="position:absolute; left:313px;top:115px;"
-                    /></progress> -->
-
-                    <!-- 完成框 -->
-
-                </h2>
-
-                <!-- 图片上传完成反馈图标 -->
-                <img
-                    id="CompleteIcon"
-                    src="./Image/Uploaded.png"
-                />
-
-                <input
-                    type="hidden"
-                    name="_captcha"
-                    value="false"
-                >
-                <input
-                    type="hidden"
-                    name="_next"
-                    value="https://jessejixin.github.io/website3.html"
-                >
-
-
-                <p3>
-                    <button
-                        type="submit"
-                        style="position:absolute; left:310px;top:465px;"
-                    >Send</button>
-            </div>
-            </p3>
-        </form>
+        <button type="submit">Send</button>
     </div>
 
+    <!-- 上传进度条和上传完成后显示图标的 JavaScript 代码 -->
+    <script type="text/javascript">
+        const fileUploader = document.getElementById('file-uploader');
+        const reader = new FileReader();
+
+        fileUploader.addEventListener('change', (event) => {
+            const files = event.target.files;
+            const file = files[0];
+            reader.readAsDataURL(file);
+
+            reader.addEventListener('progress', (event) => {
+                if (event.loaded && event.total) {
+                    showProgress();
+                }
+            });
+        });
+
+        function showProgress() {
+            // Implement your progress bar logic here if needed
+        }
+    </script>
+
+    <!-- 获取IP地址的 JavaScript 代码 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.getJSON("https://api.ip.sb/geoip?callback=?",
+                function (json) {
+                    console.log(json.ip);
+                    document.getElementById("ip").value = json.ip;
+                }
+            );
+        });
+    </script>
 </body>
 
-<!-- 上传进度条 -->
-<script type="text/javascript">
-    const fileUploader = document.getElementById('file-uploader');
-    const feedback = document.getElementById('feedback');
-    const progress = document.getElementById('progress');
-    const reader = new FileReader();
-    fileUploader.addEventListener('change', (event) => {
-        const files = event.target.files;
-        const file = files[0];
-        reader.readAsDataURL(file);
-
-        reader.addEventListener('progress', (event) => {
-            if (event.loaded && event.total) {
-                show();
-                // const percent = (event.loaded / event.total) * 100;
-                // progress.value = percent;
-                // document.getElementById('progress-label').innerHTML = Math.round(percent) + '%';
-            }
-        });
-    });
-</script>
-
-<!-- 上传完成后显示显示icon -->
-<script>
-    function show() {
-        document.getElementById("CompleteIcon").style.opacity = "1";
-    }
-</script>
-
-<!-- 抓取ip -->
-<!-- 使用https才不会被浏览器block -->
-<!-- <script src="http://ip-api.com/json//"></script> -->
-
-<!-- <script
-    type="text/javascript"
-    src="http://code.jquery.com/jquery-latest.js"
-></script>
-<script type="text/javascript">
-    
-    var ip = returnCitySN["cip"];//定义IP
-    a = $.ajax({
-        url: "http://ip-api.com/json/",
-        type: "GET",
-        dataType: "json",
-    })
-
-    // fetch('http://ip-api.com/json/')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         // 访问数据中的 "query" 字段
-    //         console.log(data.query);
-    //         document.getElementById("ip").value = data.query;//只获取ip
-    //         console.log(ip);
-    //     });
-
-    function getLocationData(callback) {
-        var script = document.createElement('script');
-        script.src = 'http://ip-api.com/json/?callback=' + callback;
-        document.body.appendChild(script);
-    }
-
-    function showLocationData(data) {
-        console.log(data);
-        console.log(data.query);
-        document.getElementById("ip").value = data.query;
-    }
-
-    getLocationData('showLocationData'); -->
-
-</script>
-<script
-    type="text/javascript"
-    src="https://code.jquery.com/jquery-latest.js"
-></script>
-
-<script type="application/javascript">
-    $(document).ready(function () {
-        $.getJSON("https://api.ip.sb/geoip?callback=?",
-            function (json) {
-                // document.write("Geolocation information for IP address: ", json.ip);
-                // document.write("Country: ", json.country);
-                // document.write("Latitude: ", json.latitude);
-                // document.write("Longitude: ", json.longitude);
-                console.log(json.ip);
-                document.getElementById("ip").value = json.ip;
-            }
-        );
-    });
-</script>
-
-<!-- 显示剩余字符数 -->
-<!-- <p>剩余字符数：<span id="charCount">240</span></p>
-
-<script>
-    // 获取文本域和字符计数元素
-    var textArea = document.getElementById("myTextArea");
-    var charCount = document.getElementById("charCount");
-
-    // 监听文本域的输入事件
-    textArea.addEventListener("input", function () {
-        // 更新字符计数
-        charCount.textContent = textArea.maxLength - textArea.value.length;
-    });
-</script> -->
+</html>
