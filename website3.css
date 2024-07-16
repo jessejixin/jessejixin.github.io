@@ -34,12 +34,8 @@ p input {
     height: 70px;
     border: 0;
     opacity: 0;
-    cursor: url("光标.png"), auto;
 }
 
-html {
-    cursor: url("光标.png"), auto;
-}
 
 h {
     margin-top: 200px;

@@ -130,12 +130,6 @@ body {
     overflow-x: hidden;
 }
 
-
-
-html {
-    cursor: url("光标.png"), auto;
-}
-
 span {
     font-family: "Gill Sans", sans-serif;
     font-size: large;
