@@ -9,7 +9,7 @@
     margin-top: -100px;
 }
 
-p input {
+input {
     background-color: transparent;
     cursor: url("光标.png"), auto;
     border: 0;
@@ -46,13 +46,13 @@ html {
     background-color: transparent;
 }
 
-.cemetery {
+.archive {
     position: relative;
     margin: 0 auto;
     top: -25px;
 }
 
-.cemetery input {
+.archive input {
     cursor: url("光标.png"), auto;
     position: relative;
     width: 100px;

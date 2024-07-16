@@ -1,0 +1,179 @@
+/* 导航栏 */
+.home {
+    position: relative;
+    display: -webkit-box;
+    -webkit-box-pack: start;
+    -webkit-box-align: start;
+    -webkit-box-orient: start;
+    text-align: center;
+    margin-left: 10px;
+    /* opacity: 0; */
+}
+
+.home input {
+    cursor: url("光标.png"), auto;
+    position: absolute;
+    width: 60px;
+    height: 25px;
+    border: 0px;
+    left: 0px;
+    top: 0px;
+    /* opacity: 0.5; */
+    /* background-color: black; */
+    background-color: transparent;
+}
+
+.archive {
+    position: relative;
+    margin: 0 auto;
+    top: -25px;
+}
+
+.archive input {
+    cursor: url("光标.png"), auto;
+    position: relative;
+    width: 100px;
+    height: 60px;
+    border: 0;
+    top: -85px;
+    /* opacity: 0.5; */
+    /* background-color: black; */
+    background-color: transparent;
+}
+
+.about {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+.about input {
+    cursor: url("光标.png"), auto;
+    position: absolute;
+    width: 60px;
+    height: 25px;
+    border: 0px;
+    right: 1px;
+    /* opacity: 0.5; */
+    /* background-color: black; */
+    background-color: transparent;
+
+}
+
+/* 导航栏结束 */
+
+.Content {
+    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    /* overflow-x: hidden;
+    overflow-y: visible; */
+    overflow: visible;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.Bed {
+    width: 25%;
+    height: auto;
+    margin-left: 3%;
+    margin-right: 5%;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    display: inline-block;
+}
+
+.BedPaint {
+    width: 100%;
+    height: 100%;
+    margin-left: 3%;
+    margin-right: 5%;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    display: inline-block;
+}
+
+span {
+    /* word-break: normal; */
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    left: 5%;
+    /* top: 70px; */
+    top: 85%;
+    /* margin-top: 35px; */
+    text-align: justify;
+    text-align-last: justify;
+    white-space: pre-wrap;
+    z-index: 2;
+}
+
+.hiddenInfoA {
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    /* overflow: auto; */
+    position: absolute;
+    left: 8%;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition-property: all;
+    transition-duration: 0.6s;
+    z-index: 1;
+    
+}
+
+.hiddenInfoB {
+    display: inline-block;
+    width: 15%;
+    height: auto;
+    /* overflow: auto; */
+    position: absolute;
+    left: 42%;
+    top: 40px;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition-property: all;
+    transition-duration: 0.6s;
+    z-index: 1;
+}
+
+.hiddenInfoC {
+    display: inline-block;
+    width: 15%;
+    height: auto;
+    /* overflow: auto; */
+    position: absolute;
+    left: 75%;
+    top: 40px;
+    opacity: 0;
+    background-color: white;
+    pointer-events: none;
+    transition-property: all;
+    transition-duration: 0.6s;
+    z-index: 1;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+
+html {
+    cursor: url("光标.png"), auto;
+}
+
+span {
+    font-family: "Gill Sans", sans-serif;
+    font-size: large;
+    color: gray;
+}
