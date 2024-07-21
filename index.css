@@ -24,38 +24,78 @@ body {
     background-color: #ddd;
 }
 
+/* 图片陈列样式 */
+/* 主要内容样式 */
 .box {
     text-align: center;
-    margin-top: 20px;
+    padding: 50px; /* 默认填充，适应小屏幕 */
 }
 
-.box img {
-    width: 960px;
-    /* Adjust as per your image size */
-    max-width: 100%;
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+}
+
+.image-column {
+    display: flex;
+    flex-direction: column;
+    gap: 100px; /* 增加图片之间的垂直间距 */
+}
+
+.image-column img {
+    width: 100%;
+    max-width: 400px;
     height: auto;
+    aspect-ratio: 0.69; /* 设置图片比例 */
+    object-fit: cover; /* 保持比例并填充容器 */
 }
 
-.box p {
-    position: absolute;
-    left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .box {
+        padding: 40px;
+    }
+    .image-gallery {
+        gap: 5%;
+    }
+    .image-column {
+        gap: 30px;
+    }
 }
 
-.box input[type="button"] {
-    background-color: #b5b3b3;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 10px;
-    cursor: pointer;
+@media (max-width: 768px) {
+    .box {
+        padding: 30px;
+    }
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .image-column {
+        width: 80%; /* 减小列宽以适应小屏幕 */
+    }
+    .image-column img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        aspect-ratio: 4/3;
+    }
 }
 
-.box input[type="button"]:hover {
-    background-color: #4f4f4f;
+@media (max-width: 480px) {
+    .box {
+        padding: 20px;
+    }
+    .image-column {
+        width: 100%;
+        gap: 20px;
+    }
+    .image-column img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        aspect-ratio: 4/3;
+    }
 }
