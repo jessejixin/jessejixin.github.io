@@ -48,7 +48,7 @@ body {
 .image-gallery {
     display: flex;
     justify-content: center;
-    gap: 30%;
+    gap: 20%;
 }
 
 .image-column {
@@ -59,14 +59,16 @@ body {
 
 .image-column img {
     width: 100%;
-    max-width: 370px;
+    max-width: 350px;
     height: auto;
     aspect-ratio: 0.69; /* 设置图片比例 */
     object-fit: cover; /* 保持比例并填充容器 */
 }
 .button-image {
+    padding-top: 150px;
+    padding-bottom: 0;
     cursor: pointer;
-    width: 200px; /* Set your desired width */
+    width: 150px; /* Set your desired width */
     height: auto; /* Maintain aspect ratio */
     transition: transform 0.3s; /* Add a hover effect */
 }
