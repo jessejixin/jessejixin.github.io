@@ -1,25 +1,37 @@
 /* 导航栏 */
 .nav-container {
-    
     background-color: #ffff;
     padding: 10px 0;
     text-align: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center; 
 }
 
 .nav-container a {
     display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
+    width: 75px; /* Set the width of the icons */
+    height: 75px; /* Set the height of the icons */
+    background-size: contain; /* Make sure the icon fits */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    margin: 0 4%; /* Add horizontal margin for spacing */
+}
+
+.nav-container .home {
+    background-image: url('Icons/home.png');
+}
+
+.nav-container .archive {
+    background-image: url('Icons/archive.png');
+}
+
+.nav-container .about {
+    background-image: url('Icons/About.png');
 }
 
 .nav-container a:hover {
-    background-color: #ddd;
+    transform: scale(1.10); /* Slightly enlarge the image on hover */
 }
-
 /* 导航栏结束 */
 
 p {

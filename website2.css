@@ -1,19 +1,67 @@
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
+}
+
+html, body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Ensure full width */
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* 让内容垂直居中显示 */
-    background-color: #ffff; /* 设置一个背景色 */
+    display: flex; /* Enable flexbox on the body */
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center children horizontally */
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
 }
+
+nav {
+    width: 100%; /* Ensure the nav takes the full width */
+    background-color: #fff; /* Example background color */
+}
+
+.nav-container {
+    background-color: #ffff;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.nav-container a {
+    display: inline-block;
+    width: 75px; /* Set the width of the icons */
+    height: 75px; /* Set the height of the icons */
+    background-size: contain; /* Make sure the icon fits */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    margin: 0 4%; /* Add horizontal margin for spacing */
+}
+
+.nav-container .home {
+    background-image: url('Icons/home.png');
+}
+
+.nav-container .archive {
+    background-image: url('Icons/archive.png');
+}
+
+.nav-container .about {
+    background-image: url('Icons/About.png');
+}
+
+.nav-container a:hover {
+    transform: scale(1.10); /* Slightly enlarge the image on hover */
+}
+
 
 .input-box {
     padding: 20px;
     max-width: 550px;
     width: 100%;
     background-color: white;
+    margin: 20px; /* Add margin to create space above and below the input box */
 }
 
 .input-box p {
@@ -23,7 +71,7 @@ body {
 
 .input-box input[type="file"],
 .input-box textarea {
-    width: calc(100% - 20px); /* 减去内边距的宽度 */
+    width: calc(100% - 20px); /* Adjust width to account for padding */
     padding: 10px;
     margin-top: 10px;
     box-sizing: border-box;
@@ -32,20 +80,16 @@ body {
     resize: vertical;
 }
 
-.input-box input[type="file"] {
-    margin-top: 20px;
-}
-
 .input-box button[type="submit"] {
     background-color: #b5b3b3;
     color: white;
     border: none;
-    padding: 10px 0; /* 调整按钮的内边距 */
+    padding: 10px 0; /* Adjust button padding */
     text-align: center;
     text-decoration: none;
-    display: block; /* 将按钮设为块级元素 */
-    width: calc(100% - 400px); /* 减去内边距的宽度 */
-    margin: 10px auto; /* 居中按钮 */
+    display: block; /* Make button a block element */
+    width: 100%; /* Set button width to 100% of the input box */
+    margin: 10px auto; /* Center the button horizontally */
     font-size: 16px;
     cursor: pointer;
     border-radius: 4px;

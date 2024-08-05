@@ -9,26 +9,40 @@ body {
     padding: 10px 0;
     text-align: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center; 
 }
 
 .nav-container a {
     display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
+    width: 75px; /* Set the width of the icons */
+    height: 75px; /* Set the height of the icons */
+    background-size: contain; /* Make sure the icon fits */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    margin: 0 4%; /* Add horizontal margin for spacing */
+}
+
+.nav-container .home {
+    background-image: url('Icons/home.png');
+}
+
+.nav-container .archive {
+    background-image: url('Icons/archive.png');
+}
+
+.nav-container .about {
+    background-image: url('Icons/About.png');
 }
 
 .nav-container a:hover {
-    background-color: #ddd;
+    transform: scale(1.10); /* Slightly enlarge the image on hover */
 }
 
 /* 图片陈列样式 */
 /* 主要内容样式 */
 .box {
     text-align: center;
-    padding: 50px; /* 默认填充，适应小屏幕 */
+    padding: 150px; /* 默认填充，适应小屏幕 */
 }
 
 .image-gallery {
@@ -40,17 +54,26 @@ body {
 .image-column {
     display: flex;
     flex-direction: column;
-    gap: 100px; /* 增加图片之间的垂直间距 */
+    gap: 400px; /* 增加图片之间的垂直间距 */
 }
 
 .image-column img {
     width: 100%;
-    max-width: 400px;
+    max-width: 370px;
     height: auto;
     aspect-ratio: 0.69; /* 设置图片比例 */
     object-fit: cover; /* 保持比例并填充容器 */
 }
+.button-image {
+    cursor: pointer;
+    width: 200px; /* Set your desired width */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s; /* Add a hover effect */
+}
 
+.button-image:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
 /* 响应式设计 */
 @media (max-width: 1200px) {
     .box {

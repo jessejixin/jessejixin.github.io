@@ -20,6 +20,41 @@ li {
     list-style: none;
 }
 
+.nav-container {
+    background-color: #ffff;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.nav-container a {
+    display: inline-block;
+    width: 75px; /* Set the width of the icons */
+    height: 75px; /* Set the height of the icons */
+    background-size: contain; /* Make sure the icon fits */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    margin: 0 4%; /* Add horizontal margin for spacing */
+}
+
+.nav-container .home {
+    background-image: url('../../Icons/home.png');
+}
+
+.nav-container .archive {
+    background-image: url('../../Icons/archive.png');
+}
+
+.nav-container .about {
+    background-image: url('../../Icons/About.png');
+}
+
+.nav-container a:hover {
+    transform: scale(1.10); /* Slightly enlarge the image on hover */
+}
+
+
 .clearfix::after {
     content: '';
     display: block;

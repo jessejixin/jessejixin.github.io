@@ -2,11 +2,16 @@
 #content {
     /* 居中 */
     margin: 0 auto;
-    width: 600px;
+    width: 700px;
 }
 
 #content img {
-    width: 600px;
+    width: 100%; /* Make the image responsive */
+    max-width: 500px; /* Set a maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    padding: 100px; /* Default padding */
+    display: block; /* Make the image a block element */
+    margin: 0 auto; /* Center the image */
 }
 
 #content .text {
@@ -26,19 +31,33 @@ body {
     padding: 10px 0;
     text-align: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center; 
 }
 
 .nav-container a {
     display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
+    width: 75px; /* Set the width of the icons */
+    height: 75px; /* Set the height of the icons */
+    background-size: contain; /* Make sure the icon fits */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    margin: 0 4%; /* Add horizontal margin for spacing */
+}
+
+.nav-container .home {
+    background-image: url('Icons/home.png');
+}
+
+.nav-container .archive {
+    background-image: url('Icons/archive.png');
+}
+
+.nav-container .about {
+    background-image: url('Icons/About.png');
 }
 
 .nav-container a:hover {
-    background-color: #ddd;
+    transform: scale(1.10); /* Slightly enlarge the image on hover */
 }
 
 /* 导航栏结束 */
