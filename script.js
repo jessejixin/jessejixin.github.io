@@ -10,12 +10,12 @@ overlayImage.addEventListener('click', function() {
     overlayImage.style.display = 'none'; // Hide the image when clicked
 });
 
-// Optional: Keep the image displayed after clicking outside
-document.addEventListener('click', function(event) {
-    if (!textarea.contains(event.target) && !overlayImage.contains(event.target)) {
-        overlayImage.style.display = 'block'; // Keep the image displayed
-    }
-});
+// // Optional: Keep the image displayed after clicking outside
+// document.addEventListener('click', function(event) {
+//     if (!textarea.contains(event.target) && !overlayImage.contains(event.target)) {
+//         overlayImage.style.display = 'block'; // Keep the image displayed
+//     }
+// });
 
 function updateFileName() {
     const fileInput = document.getElementById('file-uploader');

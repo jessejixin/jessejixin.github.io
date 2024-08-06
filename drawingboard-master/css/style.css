@@ -19,14 +19,29 @@ ul {
 li {
     list-style: none;
 }
+.header-image {
+    position: fixed;
+    top: 95px; /* Adjust as needed to position the image vertically */
+    left: 50%; /* Move the image's left edge to the center of the viewport */
+    transform: translateX(-50%); /* Offset the image by half its width to center it */
+    width: auto; /* Maintain the image's width */
+    height: 100px; /* Set a fixed height for the image */
+    display: block; /* Ensure the image is displayed as a block element */
+    z-index: 10; /* Optional: Adjust the stacking order if necessary */
+}
 
 .nav-container {
-    background-color: #ffff;
-    padding: 10px 0;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
+    position: fixed;
+    top: 0; /* Ensures the navbar is at the top of the viewport */
+    left: 0; /* Aligns the navbar with the left edge of the viewport */
+    width: 100%; /* Makes sure the navbar spans the full width of the viewport */
+    background-color: #ffff; /* White background color */
+    padding: 10px 0; /* Vertical padding */
+    text-align: center; /* Centers text within items, not necessary for flex items */
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Center items vertically */
+    z-index: 1000; /* Ensure it stays on top of other content */
 }
 
 .nav-container a {

@@ -12,7 +12,7 @@
         http-equiv="X-UA-Compatible"
         content="ie=edge"
     >
-    <title>Paint by Yourself</title>
+    <title>Draw Your Persona</title>
     <link
         rel="shortcut icon"
         href="./image/favicon.ico"
@@ -27,14 +27,14 @@
 <body>
         <!-- Top Navigation Bar -->
         <nav class="navbar">
-            <!-- 导航栏容器 -->
             <div class="nav-container">
                 <a href="../index.html" class="home" aria-label="Home"></a>
                 <a href="../archive.html" class="archive" aria-label="Archive"></a>
                 <a href="../about.html" class="about" aria-label="About"></a>
             </div>
         </nav>
-        
+        <img src="image/MyImage/prompt.png" alt="prompts" class="header-image">
+
     <canvas id="canvas"></canvas>
     <!--  <div class="bg-btn"></div>
     <div class="color-group" id="bgGroup">
@@ -84,53 +84,45 @@
                         id="redo"
                         title="redo"
                     ></button>
-<form
-    name="canvas"
-    method="POST"
-    data-netlify="true"  
-    enctype="multipart/form-data"
-    id="canvas"
-    action="/thanks.html"
->
-    <!-- Submit button -->
-    <button
-        class="submit"
-        type="submit"
-        id="submit"
-    ></button>
+            <form
+                name="canvas"
+                method="POST"
+                data-netlify="true"  
+                enctype="multipart/form-data"
+                id="canvas"
+                action="/thanks.html"
+            >
+                <!-- Submit button -->
+                <button
+                    class="submit"
+                    type="submit"
+                    id="submit"
+                ></button>
 
-    <!-- Save button -->
-    <button
-        class="save"
-        type="button"
-        id="save"
-    ></button>
+                <!-- Save button -->
+                <button
+                    class="save"
+                    type="button"
+                    id="save"
+                ></button>
 
-    <!-- Hidden file input for image upload -->
-    <input
-        id="IMG"
-        title="upload"
-        type="file"
-        name="image"
-        style="display: none;"
-    >
+                <!-- Hidden file input for image upload -->
+                <input
+                    id="IMG"
+                    title="upload"
+                    type="file"
+                    name="persona"
+                    style="display: none;"
+                >
+                <!-- Text input for IP -->
+                <input
+                    class="ip"
+                    type="text"
+                    id="ip"
+                    name="ip"
+                >
+                </form>
 
-    <!-- Text input for IP -->
-    <input
-        class="ip"
-        type="text"
-        id="ip"
-        name="ip"
-    >
-
-    <!-- Hidden fields for Netlify form handling -->
-    <input
-        type="hidden"
-        name="_captcha"
-        value="false"
-    >
-</form>
-  
                    
                 </tr>
             </table>
