@@ -24,13 +24,13 @@
             <div style="position:relative;">
                 <img src="Image/form.jpg" width="1080px"/>
                 <div class="textarea-container">
-                    <textarea id="myTextarea" name="story"></textarea>
+                    <textarea id="myTextarea" name="story" required></textarea>
                     <img id="overlayImage" src="Image/textarea.jpg" alt="Input Box" />
             </div>
             <script src="script.js"></script>
             <!-- 附件 -->
             <div>
-                <input type="file" id="file-uploader" name="attachment" accept="image/png, image/jpeg" class="file-uploader" onchange="updateFileName()" />
+                <input type="file" id="file-uploader" name="attachment" accept="image/png, image/jpeg"class="file-uploader" onchange="updateFileName()" required/>
                 <span id="file-name" style="position: absolute; top: 129px; left: 360px; color: gray;"></span>
             </div>
                 <button type="submit" style="position:absolute; left:270px;top:482px; width: 160px; height:38px; opacity: 0;"></button>
