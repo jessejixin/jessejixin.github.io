@@ -6,14 +6,13 @@ html, body {
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
     width: 100%; /* Ensure full width */
+    height: 100%;
 }
 
 body {
     font-family: Arial, sans-serif;
     display: flex; /* Enable flexbox on the body */
     flex-direction: column; /* Arrange children in a column */
-    align-items: center; /* Center children horizontally */
-    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
 }
 
 nav {
@@ -55,47 +54,59 @@ nav {
     transform: scale(1.10); /* Slightly enlarge the image on hover */
 }
 
+.form-container {
+    width: auto; /* 宽度为 100% */
+    height: 100vh;
+    display: flex; /* 使用 flexbox 布局 */
+    flex-direction: column; /* 垂直方向布局 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+    padding: 20px; /* 内边距 */
+}
 
-.input-box {
-    padding: 20px;
-    max-width: 550px;
+.textarea-container {
+    position: relative; /* Position relative for absolute children */
+    width: 570px;
+    height: 170px;
+    cursor: pointer; /* Change cursor to indicate clickable area */
+    position:absolute; 
+    left:265.5px;
+    top:278px;
+}
+
+.textarea-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: white;
-    margin: 20px; /* Add margin to create space above and below the input box */
+    height: 100%;
+    object-fit: cover; /* Cover the entire container */
+    display: none; /* Initially hide the image */
+    z-index: 0; /* Ensure the image is below the textarea */
 }
 
-.input-box p {
-    font-size: 18px;
-    margin: 10px 0;
+textarea {
+    resize: none;
+    outline: none;
+    background-color: transparent;
+    border: 0;
+    width: 100%; /* Use 100% to fill the container */
+    height: 100%; /* Use 100% to fill the container */
+    font-size: 20px;
+    color: gray;
+    position: relative; /* Position relative for stacking */
+    z-index: 1; /* Ensure textarea is above the image */
+}
+.file-uploader{
+    position: absolute;
+    left:275px;
+    top: 130px;
+    opacity: 0; 
 }
 
-.input-box input[type="file"],
-.input-box textarea {
-    width: calc(100% - 20px); /* Adjust width to account for padding */
-    padding: 10px;
-    margin-top: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-}
-
-.input-box button[type="submit"] {
-    background-color: #b5b3b3;
-    color: white;
-    border: none;
-    padding: 10px 0; /* Adjust button padding */
-    text-align: center;
-    text-decoration: none;
-    display: block; /* Make button a block element */
-    width: 100%; /* Set button width to 100% of the input box */
-    margin: 10px auto; /* Center the button horizontally */
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.input-box button[type="submit"]:hover {
-    background-color: #4f4f4f;
+p3 button {
+    width: 145px;
+    height: 42px;
+    opacity: 0;
+    cursor: url("光标.png"), auto;
 }
