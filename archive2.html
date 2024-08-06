@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Days of Bed Care</title>
+    <link href="archive2.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <nav style="height: 80px;">
+        <div class="nav-container">
+            <a href="index.html" class="home" aria-label="Home"></a>
+            <a href="archive.html" class="archive" aria-label="Archive"></a>
+            <a href="about.html" class="about" aria-label="About"></a>
+        </div>
+    </nav>
+
+    <!-- Content with Bed images and their corresponding BedPaint images -->
+    <div class="Content">
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed1R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed1P.jpg" onclick="openModal('bed1')" />
+        </div>
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed2R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed2P.jpg" onclick="openModal('bed2')" />
+        </div>
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed3R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed3P.jpg" onclick="openModal('bed3')" />
+        </div>
+    </div>
+    
+
+    <!-- The Modal -->
+    <div id="bed1" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <div class="carousel-container">
+                <img src="BedImage/Bed1R.jpg" alt="bed 1">
+                <img src="BedImage/Bed1P.jpg" alt="bed 1 Paint">
+                <!-- Add more images as needed -->
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                </div>
+        </div>
+    </div>
+
+    <div id="bed2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bed2')">&times;</span>
+            <div class="image-gallery">
+                <img src="./BedImage/Bed2R.jpg" alt="Bed 2 Main Image" />
+                <img src="./BedImage/Bed2P.jpg" alt="Bed 2 Paint" />
+            </div>
+            <div class="comments">
+                <h2>Comments</h2>
+                <div class="comment">
+                    <div class="comment-text">
+                        <img src="./Icons/user2.jpg" alt="User 2" />
+                        <p>Another comment about Bed 2.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="bed3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bed3')">&times;</span>
+            <div class="image-gallery">
+                <img src="./BedImage/Bed3R.jpg" alt="Bed 3 Main Image" />
+                <img src="./BedImage/Bed3P.jpg" alt="Bed 3 Paint" />
+            </div>
+            <div class="comments">
+                <h2>Comments</h2>
+                <div class="comment">
+                    <div class="comment-text">
+                        <img src="./Icons/user3.jpg" alt="User 3" />
+                        <p>Yet another comment about Bed 3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target.id);
+            }
+        }
+        // JavaScript for Modal and Carousel
+        document.addEventListener('DOMContentLoaded', function() {
+        const prevButton = document.querySelector('.carousel-prev');
+        const nextButton = document.querySelector('.carousel-next');
+        const carouselContainer = document.querySelector('.carousel-container');
+        let index = 0;
+        const images = carouselContainer.querySelectorAll('img');
+        const totalImages = images.length;
+
+        function updateCarousel() {
+            const offset = -index * 100; // Calculate the offset for the current image
+            carouselContainer.style.transform = `translateX(${offset}%)`;
+        }
+
+        nextButton.addEventListener('click', function() {
+            index = (index + 1) % totalImages; // Move to the next image
+            updateCarousel();
+        });
+
+        prevButton.addEventListener('click', function() {
+            index = (index - 1 + totalImages) % totalImages; // Move to the previous image
+            updateCarousel();
+        });
+
+        // Initialize the carousel
+        updateCarousel();
+        });
+    </script>
+</body>
+
+</html>
