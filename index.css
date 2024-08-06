@@ -76,7 +76,7 @@ body {
 .button-image:hover {
     transform: scale(1.05); /* Slightly enlarge the image on hover */
 }
-/* 响应式设计 */
+/* 响应式设计
 @media (max-width: 1200px) {
     .box {
         padding: 40px;
@@ -100,7 +100,7 @@ body {
     }
     .image-column {
         width: 80%; /* 减小列宽以适应小屏幕 */
-    }
+    /* }
     .image-column img {
         width: 100%;
         height: auto;
@@ -123,4 +123,4 @@ body {
         max-width: 100%;
         aspect-ratio: 4/3;
     }
-}
+} */ 
