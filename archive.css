@@ -38,8 +38,8 @@ body {
     transform: scale(1.10); /* Slightly enlarge the image on hover */
 }
 
-/* 导航栏结束 */
 
+/* Container for the images */
 .Content {
     white-space: nowrap;
     display: -webkit-box;
@@ -47,105 +47,229 @@ body {
     -webkit-box-align: center;
     -webkit-box-orient: vertical;
     text-align: center;
-    /* overflow-x: hidden;
-    overflow-y: visible; */
     overflow: visible;
     height: 100%;
     width: 100%;
     margin: 0 auto;
 }
 
-
-.Bed {
+/* Container for each image and its corresponding hidden info */
+.image-container {
+    position: relative;
     width: 25%;
     height: auto;
     margin-left: 4%;
     margin-right: 4%;
     margin-top: 70px;
     margin-bottom: 70px;
+    background-color: white; /* White background to cover any uncovered areas */
+    overflow: hidden; /* Ensure content doesn't overflow */
     display: inline-block;
 }
 
-.BedPaint {
+/* Style for Bed images */
+.Bed {
+    width: 100%; /* Make Bed images responsive to container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space below the image */
+
+}
+
+/* Style for hiddenInfo images */
+.hiddenInfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the full width of the container */
+    height: 100%; /* Cover the full height of the container */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out; /* Transition effect for hover */
+    z-index: 10; /* Ensure it is above Bed images */
+
+}
+
+/* Show the hiddenInfo on hover with a delay */
+.image-container:hover .hiddenInfo {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out 0.3s; /* Add delay for transition */
+}
+
+.close {
+    color: #aaa;
+    padding-top: 15px;
+    padding-left: 25px;
+    float: left;
+    opacity: 0;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-gallery img {
+    max-width: 50%;
+    height: auto;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    margin-left: 3%;
-    margin-right: 5%;
-    margin-top: 70px;
-    margin-bottom: 70px;
-    display: inline-block;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
 }
 
-span {
-    /* word-break: normal; */
-    position: absolute;
-    display: inline-block;
+/* Modal Content */
+.modal-content {
+    background-image: url('Image/commentsframe.jpg'); /* Custom background image */
+    background-size: contain;
+    background-position: center; /* 居中显示背景图像 */
+    background-repeat: no-repeat; /* 避免重复显示背景图像 */
+    background-color: rgba(0, 0, 0, 0.5); /* 其他样式 */
+    color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 900px;
+    height: 100vh;
+    max-height: 620px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Carousel section */
+.modal-carousel {
+    flex: 1; /* Take up half the space */
+    position: relative;
+    overflow: hidden; /* Hide overflow for carousel effect */
     width: 100%;
-    left: 5%;
-    /* top: 70px; */
-    top: 85%;
-    /* margin-top: 35px; */
-    text-align: justify;
-    text-align-last: justify;
-    white-space: pre-wrap;
-    z-index: 2;
+    padding-right:40px;
 }
 
-.hiddenInfoA {
-    display: inline-block;
-    width: auto;
-    height: 100%;
-    /* overflow: auto; */
+/* Style for carousel-container */
+.carousel-container {
+    display: flex;
+    padding-left: 10px;
+    transition: transform 0.5s ease;
+    width: 100%; /* Make sure container takes full width */
+    height: 100%; /* Make sure container takes full height */
+    align-items: center; /* Center images vertically */
+}
+
+/* Style for images inside carousel-container */
+.carousel-container img {
+    padding-left: 40px;
+    padding-right: 30px;
+    width: 85%; /* Make images take up full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the container without distortion */
+    max-width: 100%; /* Ensure images do not overflow container */
+    max-height: 100%; /* Ensure images do not overflow container */
+}
+
+/* Navigation buttons */
+.carousel-prev, .carousel-next {
     position: absolute;
-    left: 8%;
-    background-color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
     opacity: 0;
-    pointer-events: none;
-    transition-property: all;
-    transition-duration: 0.6s;
-    z-index: 1;
-    
+    z-index: 1000; /* Ensure buttons are above content */
 }
 
-.hiddenInfoB {
-    display: inline-block;
-    width: 15%;
-    height: auto;
-    /* overflow: auto; */
-    position: absolute;
-    left: 42%;
-    top: 40px;
-    background-color: white;
-    opacity: 0;
-    pointer-events: none;
-    transition-property: all;
-    transition-duration: 0.6s;
-    z-index: 1;
+.carousel-prev {
+    left: 10px;
 }
 
-.hiddenInfoC {
-    display: inline-block;
-    width: 15%;
-    height: auto;
-    /* overflow: auto; */
-    position: absolute;
-    left: 75%;
-    top: 40px;
-    opacity: 0;
-    background-color: white;
-    pointer-events: none;
-    transition-property: all;
-    transition-duration: 0.6s;
-    z-index: 1;
+.carousel-next {
+    right: 10px;
 }
 
-body {
-    width: 100%;
-    overflow-x: hidden;
-}
-
-span {
-    font-family: "Gill Sans", sans-serif;
-    font-size: large;
+/* Comments section */
+.modal-comments {
+    padding-top: 50px;
+    flex: 1; /* Take up the other half of the space */
     color: gray;
+    box-sizing: border-box; /* Include padding and border in the width */
+    justify-content: space-between; /* Push textarea-container to the bottom */
+
 }
+
+.modal-comments p {
+    margin: 10px 0;
+}
+
+
+/* Style for textarea container */
+.textarea-container {
+    margin-top: auto; /* Push textarea-container to the bottom */
+    width: 40%;
+}
+
+/* Style for individual textareas */
+textarea {
+    margin-bottom: 0px; /* Space between textareas */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+.textarea-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire container */
+    display: none; /* Initially hide the image */
+    z-index: 0; /* Ensure the image is below the textarea */
+}
+
+/* Style for the submit button */
+.submit-button {
+    position: absolute;
+    left: 270px; /* Adjust horizontal position */
+    top: 482px; /* Adjust vertical position */
+    width: 160px; /* Adjust width */
+    height: 38px; /* Adjust height */
+    opacity: 1; /* Ensure button is visible */
+    background-color: #4CAF50; /* Example background color */
+    color: white; /* Button text color */
+    border: none;
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.submit-button:hover {
+    background-color: #45a049; /* Darker background color on hover */
+}
+
+
+/* Class to disable hover effect */
+.disable-hover .hiddenInfo:hover {
+    /* Disable hover effect */
+    opacity: 0 !important;
+    transform: none !important;
+}
+

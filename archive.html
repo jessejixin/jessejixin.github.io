@@ -2,19 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>Days of Bed Care</title>
-
     <meta charset="utf-8" />
-    <link
-        href="archive.css"
-        rel="stylesheet"
-    />
+    <title>Days of Bed Care</title>
+    <link href="archive.css" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- 顶部导航栏 -->
+    <!-- Top Navigation Bar -->
     <nav style="height: 80px;">
-        <!-- 导航栏容器 -->
         <div class="nav-container">
             <a href="index.html" class="home" aria-label="Home"></a>
             <a href="archive.html" class="archive" aria-label="Archive"></a>
@@ -22,326 +17,388 @@
         </div>
     </nav>
 
-    <!-- 1-3 -->
-    <div
-        class="Content"
-        style="position: relative;"
-    >
-
-        <img
-            class="Bed"
-            src="./BedImage/Bed1R.jpg"
-            onmouseover="show1();"
-            onmouseout="dis1();"
-        />
-        <img
-            class="Bed"
-            src="./BedImage/Bed2R.jpg"
-            onmouseover="show2();"
-            onmouseout="dis2();"
-        />
-        <img
-            class="Bed"
-            src="./BedImage/Bed3R.jpg"
-            onmouseover="show3();"
-            onmouseout="dis3();"
-        />
-
-        <div
-            class="hiddenInfoA"
-            id="hiddenInfo1"
-        >
-            <img
-                class="BedPaint"
-                src="./BedImage/Bed1P.jpg"
-            />
+    <!-- Content with Bed images and their corresponding BedPaint images -->
+    <div class="Content">
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed1R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed1P.jpg" onclick="openModal('bed1')" />
         </div>
-        <div
-            class="hiddenInfoB"
-            id="hiddenInfo2"
-        >
-            <img
-                class="BedPaint"
-                src="./BedImage/Bed2P.jpg"
-            />
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed2R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed2P.jpg" onclick="openModal('bed2')" />
         </div>
-        <div
-            class="hiddenInfoC"
-            id="hiddenInfo3"
-        >
-            <img
-                class="BedPaint"
-                src="./BedImage/Bed3P.jpg"
-            />
-            <span></span>
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed3R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed3P.jpg" onclick="openModal('bed3')" />
+        </div>
+    </div>
+    
+
+    <!-- The Modal -->
+    <div id="bed1" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <button class="close" onclick="closeModal('bed1')"></button>
+                <div class="carousel-container">
+                <img src="BedImage/Bed1R.jpg" alt="bed 1">
+                <img src="BedImage/Bed1P.jpg" alt="bed 1 Paint">
+                <!-- Add more images as needed -->
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                    <!-- <div class="form-container">
+                        <form name="comments" enctype="multipart/form-data" data-netlify="true" id="comment-bed1">
+                            <div class="textarea-container">
+                                <textarea id="name" name="name" required></textarea>
+                                <textarea id="comment" name="comment" required></textarea>
+                                <img name="frame" src="Image/commentFrame.png" alt="Input Box" />
+                            </div>
+                            <button type="submit"class="submit-button">Submit</button>
+                        </div>
+                    </form>
+                        <p class="result"></p> -->
+                </div>
         </div>
     </div>
 
-    <!-- 4-6 -->
-    <div
-        class="Content"
-        style="position: relative;"
-        width="100%"
-    >
-
-        <img
-            class="Bed"
-            src="./BedImage/Bed4R.jpg"
-            onmouseover="show4();"
-            onmouseout="dis4();"
-        />
-        <img
-            class="Bed"
-            src="./BedImage/Bed5R.jpg"
-            onmouseover="show5();"
-            onmouseout="dis5();"
-        />
-        <img
-            class="Bed"
-            src="./BedImage/Bed6R.jpg"
-            onmouseover="show6();"
-            onmouseout="dis6();"
-        />
-
-        <div
-            class="hiddenInfoA"
-            id="hiddenInfo4"
-        >
-        <img
-            class="BedPaint"
-            src="./BedImage/Bed4P.jpg"
-        />
-        <span></span>
-    </div>
-
-        <div
-            class="hiddenInfoB"
-            id="hiddenInfo5"
-        >
-            <img
-                class="BedPaint"
-                src="./BedImage/Bed5P.jpg"
-            />
-            <span></span>
-        </div>
-        <div
-            class="hiddenInfoC"
-            id="hiddenInfo6"
-        >
-            <img
-                class="BedPaint"
-                src="./BedImage/Bed6P.jpg"
-            />
-            <span></span>
+    <div id="bed2" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <button class="close" onclick="closeModal('bed2')"></button>
+                <div class="carousel-container">
+                <img src="BedImage/Bed2R.jpg" alt="bed 2">
+                <img src="BedImage/Bed2P.jpg" alt="bed 2 Paint">
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                </div>
         </div>
     </div>
 
-    <!-- 7-9 -->
-    <div
-        class="Content"
-        style="position: relative;"
-        width="100%"
-    >
-
-        <img
-            class="Bed"
-            src="./BedImage/Bed7R.jpg"
-            onmouseover="show7();"
-            onmouseout="dis7();"
-        />
-        <img
-            class="Bed"
-            src="./BedImage/Bed8R.jpg"
-            onmouseover="show8();"
-            onmouseout="dis8();"
-        />
-        <img
-            class="Bed"
-            src="./BedImage/Bed9R.jpg"
-            onmouseover="show9();"
-            onmouseout="dis9();"
-        />
-
-        <div
-            class="hiddenInfoA"
-            id="hiddenInfo7"
-        >
-            <img
-                class="BedPaint"
-                src="./BedImage/Bed7P.jpg"
-            />
-            <span>Happy new year and happy whole life :)</span>
-        </div>
-        <div
-            class="hiddenInfoB"
-            id="hiddenInfo8"
-        >
-            <img
-                class="BedPaint"
-                src="./BedImage/Bed8P.jpg"
-            />
-            <span>A Christmas wish for my best friend!</span>
-        </div>
-        <div
-            class="hiddenInfoC"
-            id="hiddenInfo9"
-        >
-            <img
-                class="BedPaint"
-                src="./BedImage/Bed9P.jpg"
-            />
-            <span>Love you ❤️ </span>
+    <div id="bed3" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <button class="close" onclick="closeModal('bed3')"></button>
+                <div class="carousel-container">
+                <img src="BedImage/Bed3R.jpg" alt="bed 3">
+                <img src="BedImage/Bed3P.jpg" alt="bed 3 Paint">
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                </div>
         </div>
     </div>
 
-    <!-- 10-12 -->
-    <div
-        class="Content"
-        style="position: relative;"
-        width="100%"
-    >
-
-        <img
-            class="Bed"
-            src="./BedImage/Bed10R.jpg"
-            onmouseover="show10();"
-            onmouseout="dis10();"
-        />
-        <img
-            class="Bed"
-            src="./BedImage/Bed11R.jpg"
-            onmouseover="show11();"
-            onmouseout="dis11();"
-        />
-        <img
-            class="Bed"
-            src="./BedImage/Bed12.jpg"
-            onmouseover="show12();"
-            onmouseout="dis12();"
-        />
-
-        <div
-            class="hiddenInfoA"
-            id="hiddenInfo10"
-        >
-            <img
-                class="BedPaint"
-                src="./BedImage/Bed10P.jpg"
-            />
-            <span></span>
+    <div class="Content">
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed4R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed4P.jpg" onclick="openModal('bed4');" />
         </div>
-        <div
-            class="hiddenInfoB"
-            id="hiddenInfo11"
-        >
-            <img
-                class="BedPaint"
-                src="./BedImage/Bed11P.jpg"
-            />
-            <span>You are cute!</span>
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed5R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed5P.jpg" onclick="openModal('bed5')" />
         </div>
-        <div
-            class="hiddenInfoC"
-            id="hiddenInfo12"
-        >
-            <img
-                class="BedPaint"
-                src="./BedImage/Bed12P.jpg"
-            />
-            <span>Be a happy angel there!</span>
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed6R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed6P.jpg" onclick="openModal('bed6')" />
         </div>
     </div>
-</body>
 
-<script>
-    window.addEventListener('load', function() {
-        const bedElement = document.querySelector('.Bed');
-        const hiddenInfoElement = document.querySelector('.hiddenInfoA');
-        
-        function matchHeight() {
-            const bedHeight = bedElement.offsetHeight;
-            hiddenInfoElement.style.height = bedHeight + 'px';
+
+    <!-- The Modal -->
+    <div id="bed4" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <button class="close" onclick="closeModal('bed4')"></button>
+                <div class="carousel-container">
+                <img src="BedImage/Bed4R.jpg" alt="bed 4">
+                <img src="BedImage/Bed4P.jpg" alt="bed 4 Paint">
+                <!-- Add more images as needed -->
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                </div>
+        </div>
+    </div>
+
+    <div id="bed5" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <button class="close" onclick="closeModal('bed5')"></button>
+                <div class="carousel-container">
+                <img src="BedImage/Bed5R.jpg" alt="bed 5">
+                <img src="BedImage/Bed5P.jpg" alt="bed 5 Paint">
+                <!-- Add more images as needed -->
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                </div>
+        </div>
+    </div>
+
+    <div id="bed6" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <button class="close" onclick="closeModal('bed6')"></button>
+                <div class="carousel-container">
+                <img src="BedImage/Bed6R.jpg" alt="bed 6">
+                <img src="BedImage/Bed6P.jpg" alt="bed 6 Paint">
+                <!-- Add more images as needed -->
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                </div>
+        </div>
+    </div>
+
+    <div class="Content">
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed7R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed7P.jpg" onclick="openModal('bed7');" />
+        </div>
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed8R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed8P.jpg" onclick="openModal('bed8')" />
+        </div>
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed9R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed9P.jpg" onclick="openModal('bed9')" />
+        </div>
+    </div>
+
+
+    <!-- The Modal -->
+    <div id="bed7" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <button class="close" onclick="closeModal('bed4')"></button>
+                <div class="carousel-container">
+                <img src="BedImage/Bed7R.jpg" alt="bed 7">
+                <img src="BedImage/Bed7P.jpg" alt="bed 7 Paint">
+                <!-- Add more images as needed -->
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                </div>
+        </div>
+    </div>
+
+    <div id="bed8" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <button class="close" onclick="closeModal('bed5')"></button>
+                <div class="carousel-container">
+                <img src="BedImage/Bed8R.jpg" alt="bed 8">
+                <img src="BedImage/Bed8P.jpg" alt="bed 8 Paint">
+                <!-- Add more images as needed -->
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                </div>
+        </div>
+    </div>
+
+    <div id="bed9" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <button class="close" onclick="closeModal('bed9')"></button>
+                <div class="carousel-container">
+                <img src="BedImage/Bed9R.jpg" alt="bed 9">
+                <img src="BedImage/Bed9P.jpg" alt="bed 9 Paint">
+                <!-- Add more images as needed -->
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                </div>
+        </div>
+    </div>
+
+    <div class="Content">
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed10R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed10P.jpg" onclick="openModal('bed10');" />
+        </div>
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed11R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed11P.jpg" onclick="openModal('bed11')" />
+        </div>
+        <div class="image-container">
+            <img class="Bed" src="./BedImage/Bed12R.jpg" />
+            <img class="hiddenInfo" src="./BedImage/Bed12P.jpg" onclick="openModal('bed12')" />
+        </div>
+    </div>
+
+
+    <!-- The Modal -->
+    <div id="bed10" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <button class="close" onclick="closeModal('bed10')"></button>
+                <div class="carousel-container">
+                <img src="BedImage/Bed10R.jpg" alt="bed 10">
+                <img src="BedImage/Bed10P.jpg" alt="bed 10 Paint">
+                <!-- Add more images as needed -->
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                </div>
+        </div>
+    </div>
+
+    <div id="bed11" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <button class="close" onclick="closeModal('bed11')"></button>
+                <div class="carousel-container">
+                <img src="BedImage/Bed11R.jpg" alt="bed 11">
+                <img src="BedImage/Bed11P.jpg" alt="bed 11 Paint">
+                <!-- Add more images as needed -->
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                </div>
+        </div>
+    </div>
+
+    <div id="bed12" class="modal">
+        <div class="modal-content">
+            <div class="modal-carousel">
+                <button class="close" onclick="closeModal('bed12')"></button>
+                <div class="carousel-container">
+                <img src="BedImage/Bed12R.jpg" alt="bed 12">
+                <img src="BedImage/Bed12P.jpg" alt="bed 12 Paint">
+                <!-- Add more images as needed -->
+            </div>
+                <button class="carousel-prev">&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>
+                <div class="modal-comments">
+                    <p>This is a comment about the image.</p>
+                    <p>Another comment goes here.</p>
+                    <!-- 添加更多评论 -->
+                </div>
+        </div>
+    </div>
+    
+    <script>
+
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+            document.body.classList.add('disable-hover'); // Disable hover effect
+
         }
 
-        // Match height on load
-        matchHeight();
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+            document.body.classList.remove('disable-hover'); // Enable hover effect
 
-        // Match height on window resize
-        window.addEventListener('resize', matchHeight);
-    });
-</script>
+        }
 
-<script>
-    function show1() {
-        document.getElementById("hiddenInfo1").style.opacity = "1";
-    }
-    function dis1() {
-        document.getElementById("hiddenInfo1").style.opacity = "0";
-    }
-    function show2() {
-        document.getElementById("hiddenInfo2").style.opacity = "1";
-    }
-    function dis2() {
-        document.getElementById("hiddenInfo2").style.opacity = "0";
-    }
-    function show3() {
-        document.getElementById("hiddenInfo3").style.opacity = "1";
-    }
-    function dis3() {
-        document.getElementById("hiddenInfo3").style.opacity = "0";
-    }
-    function show4() {
-        document.getElementById("hiddenInfo4").style.opacity = "0";
-    }
-    function dis4() {
-        document.getElementById("hiddenInfo4").style.opacity = "0";
-    }
-    function show5() {
-        document.getElementById("hiddenInfo5").style.opacity = "1";
-    }
-    function dis5() {
-        document.getElementById("hiddenInfo5").style.opacity = "0";
-    }
-    function show6() {
-        document.getElementById("hiddenInfo6").style.opacity = "1";
-    }
-    function dis6() {
-        document.getElementById("hiddenInfo6").style.opacity = "0";
-    }
-    function show7() {
-        document.getElementById("hiddenInfo7").style.opacity = "0";
-    }
-    function dis7() {
-        document.getElementById("hiddenInfo7").style.opacity = "0";
-    }
-    function show8() {
-        document.getElementById("hiddenInfo8").style.opacity = "1";
-    }
-    function dis8() {
-        document.getElementById("hiddenInfo8").style.opacity = "0";
-    }
-    function show9() {
-        document.getElementById("hiddenInfo9").style.opacity = "1";
-    }
-    function dis9() {
-        document.getElementById("hiddenInfo9").style.opacity = "0";
-    }
-    function show10() {
-        document.getElementById("hiddenInfo10").style.opacity = "0";
-    }
-    function dis10() {
-        document.getElementById("hiddenInfo10").style.opacity = "0";
-    }
-    function show11() {
-        document.getElementById("hiddenInfo11").style.opacity = "1";
-    }
-    function dis11() {
-        document.getElementById("hiddenInfo11").style.opacity = "0";
-    }
-    function show12() {
-        document.getElementById("hiddenInfo12").style.opacity = "1";
-    }
-    function dis12() {
-        document.getElementById("hiddenInfo12").style.opacity = "0";
-    }
-</script>
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target.id);
+            }
+        }
+            document.addEventListener('DOMContentLoaded', function() {
+                const carousels = document.querySelectorAll('.modal-carousel');
+
+                carousels.forEach(carousel => {
+                    const prevButton = carousel.querySelector('.carousel-prev');
+                    const nextButton = carousel.querySelector('.carousel-next');
+                    const carouselContainer = carousel.querySelector('.carousel-container');
+                    const images = carouselContainer.querySelectorAll('img');
+                    let index = 0;
+                    const totalImages = images.length;
+
+                    function updateCarousel() {
+                        const offset = -index * 100; // Calculate the offset for the current image
+                        carouselContainer.style.transform = `translateX(${offset}%)`;
+                    }
+
+                    nextButton.addEventListener('click', function() {
+                        index = (index + 1) % totalImages; // Move to the next image
+                        updateCarousel();
+                    });
+
+                    prevButton.addEventListener('click', function() {
+                        index = (index - 1 + totalImages) % totalImages; // Move to the previous image
+                        updateCarousel();
+                    });
+
+                    // Initialize the carousel
+                    updateCarousel();
+                });
+        });
+        const textarea = document.getElementById('name');
+
+        const overlayImage = document.getElementByName('frame');
+
+        textarea.addEventListener('focus', function() {
+            overlayImage.style.display = 'block'; // Show the image when the textarea is focused
+        });
+
+        // Optional: Hide the image when clicking on the image itself
+        overlayImage.addEventListener('click', function() {
+            overlayImage.style.display = 'none'; // Hide the image when clicked
+        });
+
+    </script>
+</body>
+
+</html>
