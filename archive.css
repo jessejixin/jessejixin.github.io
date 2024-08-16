@@ -86,6 +86,7 @@ body {
     opacity: 0; /* Hidden by default */
     transition: opacity 0.5s ease-in-out; /* Transition effect for hover */
     z-index: 10; /* Ensure it is above Bed images */
+    cursor: pointer; /* Change cursor to pointer on hover */
 
 }
 
