@@ -145,10 +145,11 @@ body {
     background-repeat: no-repeat; /* 避免重复显示背景图像 */
     background-color: rgba(0, 0, 0, 0.5); /* 其他样式 */
     color: #fff;
-    margin: 15% auto;
+    margin: auto;
+    margin-top: 10%;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 100%;
     max-width: 900px;
     height: 100vh;
     max-height: 620px;
@@ -228,44 +229,80 @@ body {
 
 /* Style for textarea container */
 .textarea-container {
-    margin-top: auto; /* Push textarea-container to the bottom */
-    width: 40%;
+    display: flex;
+    flex-direction: column; /* Stack textareas vertically */
+    position: absolute;
+    bottom: 0;
+    left: 650px;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 12px;
 }
 
 /* Style for individual textareas */
 textarea {
-    margin-bottom: 0px; /* Space between textareas */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: 100px; /* Adjust width with padding */
+    margin-bottom: 10px; /* Space between textareas */
+    height: 20px;
+    box-sizing: border-box;
+    z-index: 99; /* Ensure it's below the image */
+
 }
-.textarea-container img {
+#frame {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the entire container */
-    display: none; /* Initially hide the image */
-    z-index: 0; /* Ensure the image is below the textarea */
+    max-width: 320px;
+    top: 0; /* Adjust based on your layout */
+    left: 0; /* Adjust based on your layout */
+    display: none; /* Hide initially */
+    z-index: 100; /* Ensure it's above the textareas */
 }
 
 /* Style for the submit button */
 .submit-button {
+    top: 620px;
+    left: 750px;
     position: absolute;
-    left: 270px; /* Adjust horizontal position */
-    top: 482px; /* Adjust vertical position */
-    width: 160px; /* Adjust width */
-    height: 38px; /* Adjust height */
+    width: 36px; /* Adjust width */
+    height: 13px; /* Adjust height */
     opacity: 1; /* Ensure button is visible */
     background-color: #4CAF50; /* Example background color */
     color: white; /* Button text color */
+    /* opacity: 0; */
     border: none;
     cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-.submit-button:hover {
-    background-color: #45a049; /* Darker background color on hover */
+.like-container {
+    top: 590px;
+    left: 800px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+/* Style for the like button */
+.like-button {
+    top: 30px;
+    left: 0px;
+    position: absolute;
+    width: 25px; /* Adjust width */
+    height: 18px; /* Adjust height */
+    opacity: 1; /* Ensure button is visible */
+    background-color: #4CAF50; /* Example background color */
+    color: white; /* Button text color */
+    /* opacity: 0; */
+    border: none;
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
+#like-icon {
+    width: 50px; /* Set your preferred size */
+    height: auto;
+}
+
+#like-count {
+
+    font-size: 16px;
+}
 
 /* Class to disable hover effect */
 .disable-hover .hiddenInfo:hover {
@@ -273,4 +310,3 @@ textarea {
     opacity: 0 !important;
     transform: none !important;
 }
-

@@ -51,17 +51,27 @@
                     <p>This is a comment about the image.</p>
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
-                    <!-- <div class="form-container">
+                    <div class="form-container">
                         <form name="comments" enctype="multipart/form-data" data-netlify="true" id="comment-bed1">
                             <div class="textarea-container">
                                 <textarea id="name" name="name" required></textarea>
                                 <textarea id="comment" name="comment" required></textarea>
-                                <img name="frame" src="Image/commentFrame.png" alt="Input Box" />
+                                <img id="frame" src="Image/commentFrame.png" alt="Input Box" style="display:none;" />
                             </div>
-                            <button type="submit"class="submit-button">Submit</button>
+                            <button type="submit"class="submit-button"></button>
                         </div>
                     </form>
-                        <p class="result"></p> -->
+                    <!-- Like button and count -->
+                    <div class="like-container">
+                        <form name="like-form" method="POST" data-netlify="true", id="like-bed1">
+                            <input type="hidden" name="like" value="1" />
+                            <button type="submit" class="like-button">
+                               
+                            </button>
+                        </form>
+                        <span id="like-count">0</span> Likes
+                    </div>
+                    <p class="result"></p>
                 </div>
         </div>
     </div>
@@ -336,16 +346,25 @@
     </div>
     
     <script>
+        function showImage(imageId) {
+            document.getElementById(imageId).style.display = 'block';
+        }
+        function toggleLike() {
+            var likeIcon = document.getElementById('like-icon');
+            likeIcon.style.display = likeIcon.style.display === 'none' ? 'inline' : 'none';
+        }
 
         function openModal(id) {
             document.getElementById(id).style.display = "block";
             document.body.classList.add('disable-hover'); // Disable hover effect
+            document.body.style.overflow = "hidden"; // 禁用页面滚动
 
         }
 
         function closeModal(id) {
             document.getElementById(id).style.display = "none";
             document.body.classList.remove('disable-hover'); // Enable hover effect
+            document.body.style.overflow = "auto"; // 恢复页面滚动
 
         }
 
