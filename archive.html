@@ -62,8 +62,8 @@
                         </div>
                     </form>
                     <div class="like-container">
-                        <button onclick="handleLike('item1')"class="like-button"></button>
-                        <span id="like-count">0 Likes</span>
+                        <button onclick="handleLike('item1')" class="like-button"></button>
+                        <span id="like-count-item1"></span>
                     </div>
                     <p class="result"></p>
                 </div>
@@ -343,31 +343,36 @@
         function showImage(imageId) {
             document.getElementById(imageId).style.display = 'block';
         }
-
-        document.addEventListener('DOMContentLoaded', async () => {
-            const response = await fetch('/.netlify/functions/like');
-            const data = await response.json();
-
-            // Set the initial like count for item1
-            const likeCountElement = document.getElementById('like-count');
-            if (data.item1 !== undefined) {
-                likeCountElement.textContent = `${data.item1} Likes`;
-            } else {
-                likeCountElement.textContent = '0 Likes';
-            }
-        });
-
         async function handleLike(itemId) {
             const response = await fetch('/.netlify/functions/like', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ item_id: itemId }),
+                body: JSON.stringify({ item_id: itemId }), // Use dynamic item_id
             });
 
             const data = await response.json();
-            document.getElementById('like-count').textContent = `${data.likes} Likes`;
+            document.getElementById(`like-count-${itemId}`).textContent = `${data.likes} Likes`;
         }
-      
+
+        // Function to load initial like counts for all items
+        async function loadLikes() {
+            const items = ['item1', 'item2']; // Add all your item IDs here
+            for (let itemId of items) {
+                const response = await fetch('/.netlify/functions/getLikes', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ item_id: itemId }),
+                });
+
+                const data = await response.json();
+                document.getElementById(`like-count-${itemId}`).textContent = `${data.likes} Likes`;
+            }
+        }
+
+        // Call loadLikes when the page loads
+        window.onload = loadLikes;
+
+        
         function openModal(id) {
             document.getElementById(id).style.display = "block";
             document.body.classList.add('disable-hover'); // Disable hover effect

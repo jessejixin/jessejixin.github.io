@@ -1,31 +1,39 @@
-const fs = require('fs');
-const path = require('path');
+const faunadb = require('faunadb');
+const q = faunadb.query;
 
-exports.handler = async (event, context) => {
-  const filePath = path.resolve(__dirname, '../../data/likes.json');
+exports.handler = async (event) => {
+    const client = new faunadb.Client({ secret: process.env.FAUNA_SECRET });
+    const data = JSON.parse(event.body);
+    const { item_id } = data;
 
-  try {
-    // Read the JSON file
-    const data = fs.readFileSync(filePath);
-    const likes = JSON.parse(data);
+    try {
+        const exists = await client.query(
+            q.Exists(q.Match(q.Index('likes_by_item_id'), item_id))
+        );
 
-    // Extract item ID from the request
-    const { item_id } = JSON.parse(event.body);
-
-    // Increment the like count for the given item
-    likes[item_id] = (likes[item_id] || 0) + 1;
-
-    // Save the updated likes back to the JSON file
-    fs.writeFileSync(filePath, JSON.stringify(likes, null, 2));
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ likes: likes[item_id] }),
-    };
-  } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
-    };
-  }
+        if (exists) {
+            const result = await client.query(
+                q.Update(q.Select('ref', q.Get(q.Match(q.Index('likes_by_item_id'), item_id))), {
+                    data: { likes: q.Add(q.Select(['data', 'likes'], q.Get(q.Match(q.Index('likes_by_item_id'), item_id))), 1) }
+                })
+            );
+            return {
+                statusCode: 200,
+                body: JSON.stringify({ likes: result.data.likes })
+            };
+        } else {
+            const result = await client.query(
+                q.Create(q.Collection('likes'), { data: { item_id, likes: 1 } })
+            );
+            return {
+                statusCode: 200,
+                body: JSON.stringify({ likes: result.data.likes })
+            };
+        }
+    } catch (error) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: error.message })
+        };
+    }
 };
