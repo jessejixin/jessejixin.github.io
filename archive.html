@@ -63,16 +63,8 @@
                     </form>
                     <div class="like-container">
                         <button onclick="handleLike('item1')"class="like-button"></button>
-                        <span id="like-count"></span>
-                    </div> 
-                    <!-- Like button and count
-                    <div class="like-container">
-                        <form name="like-form" method="POST" data-netlify="true", id="like-bed1">
-                            <input type="hidden" name="like" value="1" />
-                            <button type="submit" class="like-button"></button>
-                        </form>
-                        <span id="like-count">0</span> Likes
-                    </div> -->
+                        <span id="like-count"> </span>
+                    </div>
                     <p class="result"></p>
                 </div>
         </div>
@@ -351,6 +343,13 @@
         function showImage(imageId) {
             document.getElementById(imageId).style.display = 'block';
         }
+
+        async function fetchLikeCount(itemId) {
+            const response = await fetch(`/.netlify/functions/like?item_id=${itemId}`);
+            const data = await response.json();
+            document.getElementById('like-count').textContent = `${data.likes} Likes`;
+        }
+
         async function handleLike(itemId) {
             const response = await fetch('/.netlify/functions/like', {
                 method: 'POST',
@@ -362,6 +361,9 @@
             document.getElementById('like-count').textContent = `${data.likes} Likes`;
         }
 
+        // Fetch the initial like count when the page loads
+        fetchLikeCount('item1');
+      
         function openModal(id) {
             document.getElementById(id).style.display = "block";
             document.body.classList.add('disable-hover'); // Disable hover effect
