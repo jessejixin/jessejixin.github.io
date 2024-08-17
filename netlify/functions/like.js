@@ -1,22 +1,32 @@
-// like.js
-const likes = {}; // This is an in-memory store. For production, use a database.
+const fs = require('fs');
+const path = require('path');
 
-exports.handler = async function(event, context) {
-    const { item_id } = event.queryStringParameters || JSON.parse(event.body);
+const filePath = path.resolve(__dirname, 'likes.json');
 
+exports.handler = async (event) => {
     if (event.httpMethod === 'GET') {
-        // Retrieve like count from your database or storage
-        const likes = await getLikeCount(item_id);
+        // Read the current likes
+        const data = fs.readFileSync(filePath);
+        const likes = JSON.parse(data);
+
         return {
             statusCode: 200,
-            body: JSON.stringify({ likes }),
+            body: JSON.stringify(likes),
         };
     } else if (event.httpMethod === 'POST') {
-        // Increment the like count and save it
-        const newLikes = await incrementLikeCount(item_id);
+        const { item_id } = JSON.parse(event.body);
+
+        // Read and update the like count
+        const data = fs.readFileSync(filePath);
+        const likes = JSON.parse(data);
+        likes[item_id] = likes[item_id] ? likes[item_id] + 1 : 1;
+
+        // Write updated likes back to file
+        fs.writeFileSync(filePath, JSON.stringify(likes));
+
         return {
             statusCode: 200,
-            body: JSON.stringify({ likes: newLikes }),
+            body: JSON.stringify({ likes: likes[item_id] }),
         };
     } else {
         return {
