@@ -54,8 +54,8 @@
                     <div class="form-container">
                         <form name="comments" enctype="multipart/form-data" data-netlify="true" id="comment-bed1">
                             <div class="textarea-container">
-                                <textarea id="name" name="name" required></textarea>
-                                <textarea id="comment" name="comment" required></textarea>
+                                <textarea id="name1" name="name1" required></textarea>
+                                <textarea id="comment1" name="comment1" required></textarea>
                                 <img id="frame" src="Image/commentFrame.png" alt="Input Box" style="display:none;" />
                             </div>
                             <button type="submit"class="submit-button"></button>
@@ -63,7 +63,7 @@
                     </form>
                     <div class="like-container">
                         <button onclick="handleLike('item1')" class="like-button"></button>
-                        <span id="like-count-item1"></span>
+                        <span id="like-count-item1">Loading likes...</span>
                     </div>
                     <p class="result"></p>
                 </div>
@@ -85,6 +85,21 @@
                     <p>This is a comment about the image.</p>
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
+                    <div class="form-container">
+                        <form name="comments" enctype="multipart/form-data" data-netlify="true" id="comment-bed2">
+                            <div class="textarea-container">
+                                <textarea id="name2" name="name2" required></textarea>
+                                <textarea id="comment2" name="comment2" required></textarea>
+                                <img id="frame" src="Image/commentFrame.png" alt="Input Box" style="display:none;" />
+                            </div>
+                            <button type="submit"class="submit-button"></button>
+                        </div>
+                    </form>
+                    <div class="like-container">
+                        <button onclick="handleLike('item2')" class="like-button"></button>
+                        <span id="like-count-item2">Loading likes...</span>
+                    </div>
+                    <p class="result"></p>
                 </div>
         </div>
     </div>
@@ -343,34 +358,49 @@
         function showImage(imageId) {
             document.getElementById(imageId).style.display = 'block';
         }
+
+        async function loadLikes(itemId) {
+            try {
+                const response = await fetch('/.netlify/functions/getlikes');
+                const data = await response.json();
+                const likeCount = data[itemId];
+
+                // 检查 likeCount 是否存在并有效
+                if (likeCount !== undefined) {
+                    document.getElementById(`like-count-${itemId}`).textContent = `${likeCount} Likes`;
+                } else {
+                    document.getElementById(`like-count-${itemId}`).textContent = '0 Likes';
+                }
+            } catch (error) {
+                console.error('Error fetching likes:', error);
+                document.getElementById(`like-count-${itemId}`).textContent = 'Error loading likes';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // const items = ['item1', 'item2', 'item3','item4', 'item5', 'item6','item7', 'item8', 'item9','item10', 'item11', 'item12']; 
+            const items = ['item1', 'item2'];
+            items.forEach(itemId => {
+                loadLikes(itemId);
+            });
+        });
+
+        // Function to handle the like button click
         async function handleLike(itemId) {
+            try {
             const response = await fetch('/.netlify/functions/like', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ item_id: itemId }), // Use dynamic item_id
+                body: JSON.stringify({ item_id: itemId }),
             });
 
             const data = await response.json();
             document.getElementById(`like-count-${itemId}`).textContent = `${data.likes} Likes`;
-        }
-
-        // Function to load initial like counts for all items
-        async function loadLikes() {
-            const items = ['item1', 'item2']; // Add all your item IDs here
-            for (let itemId of items) {
-                const response = await fetch('/.netlify/functions/getLikes', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ item_id: itemId }),
-                });
-
-                const data = await response.json();
-                document.getElementById(`like-count-${itemId}`).textContent = `${data.likes} Likes`;
+            } catch (error) {
+            console.error('Error updating like:', error);
+            document.getElementById(`like-count-${itemId}`).textContent = 'Error updating like';
             }
         }
-
-        // Call loadLikes when the page loads
-        window.onload = loadLikes;
 
         
         function openModal(id) {

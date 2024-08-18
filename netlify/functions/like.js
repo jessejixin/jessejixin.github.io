@@ -1,39 +1,26 @@
-const faunadb = require('faunadb');
-const q = faunadb.query;
+const fs = require('fs');
+const path = require('path');
 
-exports.handler = async (event) => {
-    const client = new faunadb.Client({ secret: process.env.FAUNA_SECRET });
-    const data = JSON.parse(event.body);
-    const { item_id } = data;
+exports.handler = async function(event, context) {
+  const filePath = path.resolve(__dirname, 'likes.json');
+  const { item_id } = JSON.parse(event.body);
 
-    try {
-        const exists = await client.query(
-            q.Exists(q.Match(q.Index('likes_by_item_id'), item_id))
-        );
+  try {
+    const data = fs.readFileSync(filePath, 'utf8');
+    const likes = JSON.parse(data);
 
-        if (exists) {
-            const result = await client.query(
-                q.Update(q.Select('ref', q.Get(q.Match(q.Index('likes_by_item_id'), item_id))), {
-                    data: { likes: q.Add(q.Select(['data', 'likes'], q.Get(q.Match(q.Index('likes_by_item_id'), item_id))), 1) }
-                })
-            );
-            return {
-                statusCode: 200,
-                body: JSON.stringify({ likes: result.data.likes })
-            };
-        } else {
-            const result = await client.query(
-                q.Create(q.Collection('likes'), { data: { item_id, likes: 1 } })
-            );
-            return {
-                statusCode: 200,
-                body: JSON.stringify({ likes: result.data.likes })
-            };
-        }
-    } catch (error) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: error.message })
-        };
-    }
+    likes[item_id] = (likes[item_id] || 0) + 1;
+
+    fs.writeFileSync(filePath, JSON.stringify(likes, null, 2), 'utf8');
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ likes: likes[item_id] }),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Could not update likes data' }),
+    };
+  }
 };
