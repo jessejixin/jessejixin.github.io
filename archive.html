@@ -64,6 +64,7 @@
                     <div class="like-container">
                         <button onclick="handleLike('item1')" class="like-button"></button>
                         <span id="like-count-item1">Loading likes...</span>
+                        <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
                     </div>
                     <p class="result"></p>
                 </div>
@@ -361,31 +362,14 @@
 
         async function loadLikes(itemId) {
             try {
-                const response = await fetch('/.netlify/functions/getlikes');
-                const data = await response.json();
-                const likeCount = data[itemId];
-
-                // 检查 likeCount 是否存在并有效
-                if (likeCount !== undefined) {
-                    document.getElementById(`like-count-${itemId}`).textContent = `${likeCount} Likes`;
-                } else {
-                    document.getElementById(`like-count-${itemId}`).textContent = '0 Likes';
-                }
+            const response = await fetch('/.netlify/functions/getlikes');
+            const data = await response.json();
+            document.getElementById(`like-count-${itemId}`).textContent = `${data[itemId] || 0} Likes`;
             } catch (error) {
-                console.error('Error fetching likes:', error);
-                document.getElementById(`like-count-${itemId}`).textContent = 'Error loading likes';
+            console.error('Error fetching likes:', error);
             }
         }
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            // const items = ['item1', 'item2', 'item3','item4', 'item5', 'item6','item7', 'item8', 'item9','item10', 'item11', 'item12']; 
-            const items = ['item1', 'item2'];
-            items.forEach(itemId => {
-                loadLikes(itemId);
-            });
-        });
 
-        // Function to handle the like button click
         async function handleLike(itemId) {
             try {
             const response = await fetch('/.netlify/functions/like', {
@@ -395,12 +379,59 @@
             });
 
             const data = await response.json();
-            document.getElementById(`like-count-${itemId}`).textContent = `${data.likes} Likes`;
+            document.getElementById(`like-count-${itemId}`).textContent = `${data[itemId]} Likes`;
             } catch (error) {
             console.error('Error updating like:', error);
             document.getElementById(`like-count-${itemId}`).textContent = 'Error updating like';
             }
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadLikes('item1');
+        });
+
+        // async function loadLikes(itemId) {
+        //     try {
+        //         const response = await fetch('/.netlify/functions/getlikes');
+        //         const data = await response.json();
+        //         const likeCount = data[itemId];
+
+        //         // 检查 likeCount 是否存在并有效
+        //         if (likeCount !== undefined) {
+        //             document.getElementById(`like-count-${itemId}`).textContent = `${likeCount} Likes`;
+        //         } else {
+        //             document.getElementById(`like-count-${itemId}`).textContent = '0 Likes';
+        //         }
+        //     } catch (error) {
+        //         console.error('Error fetching likes:', error);
+        //         document.getElementById(`like-count-${itemId}`).textContent = 'Error loading likes';
+        //     }
+        // }
+        
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     // const items = ['item1', 'item2', 'item3','item4', 'item5', 'item6','item7', 'item8', 'item9','item10', 'item11', 'item12']; 
+        //     const items = ['item1', 'item2'];
+        //     items.forEach(itemId => {
+        //         loadLikes(itemId);
+        //     });
+        // });
+
+        // Function to handle the like button click
+        // async function handleLike(itemId) {
+        //     try {
+        //     const response = await fetch('/.netlify/functions/like', {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify({ item_id: itemId }),
+        //     });
+
+        //     const data = await response.json();
+        //     document.getElementById(`like-count-${itemId}`).textContent = `${data.likes} Likes`;
+        //     } catch (error) {
+        //     console.error('Error updating like:', error);
+        //     document.getElementById(`like-count-${itemId}`).textContent = 'Error updating like';
+        //     }
+        // }
 
         
         function openModal(id) {

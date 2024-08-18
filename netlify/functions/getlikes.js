@@ -1,19 +1,20 @@
-const fs = require('fs');
-const path = require('path');
+const faunadb = require('faunadb');
+const q = faunadb.query;
 
-exports.handler = async function(event, context) {
-  const filePath = path.resolve(__dirname, 'likes.json');
+exports.handler = async (event, context) => {
   try {
-    const data = fs.readFileSync(filePath, 'utf8');
-    const likes = JSON.parse(data);
+    const client = new faunadb.Client({ secret: process.env.FAUNA_SECRET });
+    const response = await client.query(
+      q.Get(q.Ref(q.Collection('likes'), '406568068798480450'))
+    );
     return {
       statusCode: 200,
-      body: JSON.stringify(likes),
+      body: JSON.stringify(response.data),
     };
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Could not read likes data' }),
+      body: JSON.stringify({ error: 'Could not fetch likes data' }),
     };
   }
 };

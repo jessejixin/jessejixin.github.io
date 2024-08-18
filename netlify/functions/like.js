@@ -1,21 +1,25 @@
-const fs = require('fs');
-const path = require('path');
+const faunadb = require('faunadb');
+const q = faunadb.query;
 
-exports.handler = async function(event, context) {
-  const filePath = path.resolve(__dirname, 'likes.json');
-  const { item_id } = JSON.parse(event.body);
-
+exports.handler = async (event, context) => {
   try {
-    const data = fs.readFileSync(filePath, 'utf8');
-    const likes = JSON.parse(data);
+    const { item_id } = JSON.parse(event.body);
+    const client = new faunadb.Client({ secret: process.env.FAUNA_SECRET });
 
-    likes[item_id] = (likes[item_id] || 0) + 1;
-
-    fs.writeFileSync(filePath, JSON.stringify(likes, null, 2), 'utf8');
+    const response = await client.query(
+      q.Update(
+        q.Ref(q.Collection('likes'), '406568068798480450'),
+        {
+          data: {
+            [item_id]: q.Add(q.Select(["data", item_id], q.Get(q.Ref(q.Collection('likes'), '406568068798480450')), 0), 1)
+          }
+        }
+      )
+    );
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ likes: likes[item_id] }),
+      body: JSON.stringify(response.data),
     };
   } catch (error) {
     return {
