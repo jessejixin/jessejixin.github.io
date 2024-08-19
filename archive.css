@@ -233,21 +233,32 @@ body {
     flex-direction: column; /* Stack textareas vertically */
     position: absolute;
     bottom: 0;
-    left: 650px;
-    width: 100%;
+    left: 510px;
+    width: 220px;
     padding: 10px;
     padding-bottom: 12px;
 }
 
 /* Style for individual textareas */
 textarea {
-    width: 100px; /* Adjust width with padding */
+    width: 100%; /* Adjust width with padding */
     margin-bottom: 10px; /* Space between textareas */
     height: 20px;
     box-sizing: border-box;
-    z-index: 99; /* Ensure it's below the image */
+    background: transparent;
+    z-index: 1; /* Ensure it's below the image */
+    border: none; /* 去掉边框 */
+    outline: none; /* 去掉点击时的高亮边框 */
+    resize: none; /* 禁止用户调整文本框大小 */
 
 }
+
+/* 使用伪元素在 textarea 聚焦时显示白色背景 */
+textarea.focused {
+    background-color: white;
+    z-index: 100; /* 保证覆盖层在 textarea 背后 */
+}
+
 #frame {
     position: absolute;
     max-width: 320px;
@@ -267,7 +278,7 @@ textarea {
     opacity: 1; /* Ensure button is visible */
     background-color: #4CAF50; /* Example background color */
     color: white; /* Button text color */
-    /* opacity: 0; */
+    opacity: 0;
     border: none;
     cursor: pointer; /* Change cursor to pointer on hover */
 }
@@ -281,17 +292,23 @@ textarea {
 }
 /* Style for the like button */
 .like-button {
-    top: 30px;
-    left: 0px;
+    top: 25px;
+    left: -2px;
     position: absolute;
     width: 25px; /* Adjust width */
     height: 18px; /* Adjust height */
     opacity: 1; /* Ensure button is visible */
-    background-color: #4CAF50; /* Example background color */
+    background-color: transparent; /* Example background color */
     color: white; /* Button text color */
     /* opacity: 0; */
     border: none;
     cursor: pointer; /* Change cursor to pointer on hover */
+}
+.like-button.liked {
+    background: url('Icons/like.png') no-repeat center;
+    width: 30px; /* Adjust width */
+    height: 30px; /* Adjust height */
+    background-size: contain;
 }
 
 #like-icon {

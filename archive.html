@@ -60,7 +60,7 @@
                             <button type="submit" class="submit-button"></button>
                         </form>
                         <div class="like-container">
-                            <button onclick="handleLike('item1')" class="like-button"></button>
+                            <button id="like-button-item1" onclick="handleLike('item1')" class="like-button"></button>
                             <span id="like-count-item1">Loading likes...</span>
                         </div>
                         <p class="result"></p>
@@ -85,21 +85,20 @@
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
                     <div class="form-container">
-                        <form name="comments" enctype="multipart/form-data" data-netlify="true" id="comment-bed2">
+                        <form id="comment-form" onsubmit="submitComment(event, 'item2')">
                             <div class="textarea-container">
-                                <textarea id="name2" name="name2" required></textarea>
-                                <textarea id="comment2" name="comment2" required></textarea>
-                                <img id="frame" src="Image/commentFrame.png" alt="Input Box" style="display:none;" />
+                                <textarea id="name" name="name"  required></textarea>
+                                <textarea id="comment" name="comment"  required></textarea>
                             </div>
-                            <button type="submit"class="submit-button"></button>
+                            <button type="submit" class="submit-button"></button>
+                        </form>
+                        <div class="like-container">
+                            <button id="like-button-item2" onclick="handleLike('item2')" class="like-button"></button>
+                            <span id="like-count-item2">Loading likes...</span>
                         </div>
-                    </form>
-                    <div class="like-container">
-                        <button onclick="handleLike('item2')" class="like-button"></button>
-                        <span id="like-count-item2">Loading likes...</span>
-                    </div>
-                    <p class="result"></p>
+                        <p class="result"></p>
                 </div>
+            </div>
         </div>
     </div>
 
@@ -118,7 +117,21 @@
                     <p>This is a comment about the image.</p>
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
+                    <div class="form-container">
+                        <form id="comment-form" onsubmit="submitComment(event, 'item3')">
+                            <div class="textarea-container">
+                                <textarea id="name" name="name"  required></textarea>
+                                <textarea id="comment" name="comment"  required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button"></button>
+                        </form>
+                        <div class="like-container">
+                            <button id="like-button-item3" onclick="handleLike('item3')" class="like-button"></button>
+                            <span id="like-count-item3">Loading likes...</span>
+                        </div>
+                        <p class="result"></p>
                 </div>
+             </div>
         </div>
     </div>
 
@@ -155,7 +168,21 @@
                     <p>This is a comment about the image.</p>
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
+                    <div class="form-container">
+                        <form id="comment-form" onsubmit="submitComment(event, 'item4')">
+                            <div class="textarea-container">
+                                <textarea id="name" name="name"  required></textarea>
+                                <textarea id="comment" name="comment"  required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button"></button>
+                        </form>
+                        <div class="like-container">
+                            <button id="like-button-item4" onclick="handleLike('item4')" class="like-button"></button>
+                            <span id="like-count-item4">Loading likes...</span>
+                        </div>
+                        <p class="result"></p>
                 </div>
+             </div>
         </div>
     </div>
 
@@ -175,7 +202,21 @@
                     <p>This is a comment about the image.</p>
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
+                    <div class="form-container">
+                        <form id="comment-form" onsubmit="submitComment(event, 'item5')">
+                            <div class="textarea-container">
+                                <textarea id="name" name="name"  required></textarea>
+                                <textarea id="comment" name="comment"  required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button"></button>
+                        </form>
+                        <div class="like-container">
+                            <button id="like-button-item5" onclick="handleLike('item5')" class="like-button"></button>
+                            <span id="like-count-item5">Loading likes...</span>
+                        </div>
+                        <p class="result"></p>
                 </div>
+            </div>
         </div>
     </div>
 
@@ -195,7 +236,21 @@
                     <p>This is a comment about the image.</p>
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
+                    <div class="form-container">
+                        <form id="comment-form" onsubmit="submitComment(event, 'item6')">
+                            <div class="textarea-container">
+                                <textarea id="name" name="name"  required></textarea>
+                                <textarea id="comment" name="comment"  required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button"></button>
+                        </form>
+                        <div class="like-container">
+                            <button id="like-button-item6" onclick="handleLike('item6')" class="like-button"></button>
+                            <span id="like-count-item6">Loading likes...</span>
+                        </div>
+                        <p class="result"></p>
                 </div>
+            </div>
         </div>
     </div>
 
@@ -232,7 +287,21 @@
                     <p>This is a comment about the image.</p>
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
+                    <div class="form-container">
+                        <form id="comment-form" onsubmit="submitComment(event, 'item7')">
+                            <div class="textarea-container">
+                                <textarea id="name" name="name"  required></textarea>
+                                <textarea id="comment" name="comment"  required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button"></button>
+                        </form>
+                        <div class="like-container">
+                            <button id="like-button-item7" onclick="handleLike('item7')" class="like-button"></button>
+                            <span id="like-count-item7">Loading likes...</span>
+                        </div>
+                        <p class="result"></p>
                 </div>
+            </div>
         </div>
     </div>
 
@@ -252,7 +321,21 @@
                     <p>This is a comment about the image.</p>
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
+                    <div class="form-container">
+                        <form id="comment-form" onsubmit="submitComment(event, 'item8')">
+                            <div class="textarea-container">
+                                <textarea id="name" name="name"  required></textarea>
+                                <textarea id="comment" name="comment"  required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button"></button>
+                        </form>
+                        <div class="like-container">
+                            <button id="like-button-item8" onclick="handleLike('item8')" class="like-button"></button>
+                            <span id="like-count-item8">Loading likes...</span>
+                        </div>
+                        <p class="result"></p>
                 </div>
+            </div>
         </div>
     </div>
 
@@ -272,7 +355,21 @@
                     <p>This is a comment about the image.</p>
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
+                    <div class="form-container">
+                        <form id="comment-form" onsubmit="submitComment(event, 'item9')">
+                            <div class="textarea-container">
+                                <textarea id="name" name="name"  required></textarea>
+                                <textarea id="comment" name="comment"  required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button"></button>
+                        </form>
+                        <div class="like-container">
+                            <button id="like-button-item9" onclick="handleLike('item9')" class="like-button"></button>
+                            <span id="like-count-item9">Loading likes...</span>
+                        </div>
+                        <p class="result"></p>
                 </div>
+            </div>
         </div>
     </div>
 
@@ -309,7 +406,21 @@
                     <p>This is a comment about the image.</p>
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
+                    <div class="form-container">
+                        <form id="comment-form" onsubmit="submitComment(event, 'item10')">
+                            <div class="textarea-container">
+                                <textarea id="name" name="name"  required></textarea>
+                                <textarea id="comment" name="comment"  required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button"></button>
+                        </form>
+                        <div class="like-container">
+                            <button id="like-button-item10" onclick="handleLike('item10')" class="like-button"></button>
+                            <span id="like-count-item10">Loading likes...</span>
+                        </div>
+                        <p class="result"></p>
                 </div>
+            </div>
         </div>
     </div>
 
@@ -329,7 +440,21 @@
                     <p>This is a comment about the image.</p>
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
+                    <div class="form-container">
+                        <form id="comment-form" onsubmit="submitComment(event, 'item11')">
+                            <div class="textarea-container">
+                                <textarea id="name" name="name"  required></textarea>
+                                <textarea id="comment" name="comment"  required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button"></button>
+                        </form>
+                        <div class="like-container">
+                            <button id="like-button-item11" onclick="handleLike('item11')" class="like-button"></button>
+                            <span id="like-count-item11">Loading likes...</span>
+                        </div>
+                        <p class="result"></p>
                 </div>
+            </div>
         </div>
     </div>
 
@@ -349,7 +474,21 @@
                     <p>This is a comment about the image.</p>
                     <p>Another comment goes here.</p>
                     <!-- 添加更多评论 -->
+                    <div class="form-container">
+                        <form id="comment-form" onsubmit="submitComment(event, 'item12')">
+                            <div class="textarea-container">
+                                <textarea id="name" name="name"  required></textarea>
+                                <textarea id="comment" name="comment"  required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button"></button>
+                        </form>
+                        <div class="like-container">
+                            <button id="like-button-item12" onclick="handleLike('item12')" class="like-button"></button>
+                            <span id="like-count-item12">Loading likes...</span>
+                        </div>
+                        <p class="result"></p>
                 </div>
+            </div>
         </div>
     </div>
     
@@ -357,6 +496,12 @@
         function showImage(imageId) {
             document.getElementById(imageId).style.display = 'block';
         }
+        // Add event listeners to all textareas to toggle the "focused" class
+        document.querySelectorAll('textarea').forEach(textarea => {
+            textarea.addEventListener('focus', function() {
+                this.classList.add('focused');
+            });
+        });
 
         async function loadLikes(itemId) {
             try {
@@ -365,6 +510,7 @@
             document.getElementById(`like-count-${itemId}`).textContent = `${data[itemId] || 0} Likes`;
             } catch (error) {
             console.error('Error fetching likes:', error);
+            document.getElementById(`like-count-${itemId}`).textContent = 'Error loading likes';
             }
         }
 
@@ -378,6 +524,8 @@
 
             const data = await response.json();
             document.getElementById(`like-count-${itemId}`).textContent = `${data[itemId]} Likes`;
+            // 改变按钮的样式，显示爱心图片
+            document.getElementById(`like-button-${itemId}`).classList.add('liked');
             } catch (error) {
             console.error('Error updating like:', error);
             document.getElementById(`like-count-${itemId}`).textContent = 'Error updating like';
@@ -387,11 +535,16 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadLikes('item1');
         });
+        document.addEventListener('DOMContentLoaded', () => {
+            const itemIds = ['item1', 'item2', 'item3','item4', 'item5', 'item6','item7', 'item8', 'item9','item10', 'item11', 'item12'];
 
-        // document.addEventListener('DOMContentLoaded', () => {
-        //     // const items = ['item1', 'item2', 'item3','item4', 'item5', 'item6','item7', 'item8', 'item9','item10', 'item11', 'item12']; 
-        //     const items = ['item1', 'item2'];
-        //     items.forEach(itemId => {
+            itemIds.forEach(itemId => {
+                loadLikes(itemId);
+            });
+        });
+
+
+
         async function submitComment(event, itemId) {
             event.preventDefault();
             const name = document.getElementById('name').value;
