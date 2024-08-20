@@ -1,6 +1,12 @@
 * {
     box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
 }
+@font-face {
+    font-family: 'exo'; /* 给字体起个名字 */
+    src: url('fonts/Exo-Regular.otf') format('opentype'); /* 路径根据你项目中的位置调整 */
+    font-weight: normal;
+    font-style: normal;
+}
 
 html, body {
     margin: 0; /* Remove default margin */
@@ -10,7 +16,7 @@ html, body {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: exo, sans-serif;
     display: flex; /* Enable flexbox on the body */
     flex-direction: column; /* Arrange children in a column */
 }
@@ -86,6 +92,7 @@ nav {
 }
 
 textarea {
+    font-family: exo, sans-serif;
     resize: none;
     outline: none;
     background-color: transparent;

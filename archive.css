@@ -1,6 +1,12 @@
+@font-face {
+    font-family: 'exo'; /* 给字体起个名字 */
+    src: url('fonts/Exo-Regular.otf') format('opentype'); /* 路径根据你项目中的位置调整 */
+    font-weight: normal;
+    font-style: normal;
+}
 /* 导航栏 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: exo, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -241,6 +247,8 @@ body {
 
 /* Style for individual textareas */
 textarea {
+    font-family: exo, sans-serif;
+    color: gray;
     width: 100%; /* Adjust width with padding */
     margin-bottom: 10px; /* Space between textareas */
     height: 20px;
@@ -250,6 +258,7 @@ textarea {
     border: none; /* 去掉边框 */
     outline: none; /* 去掉点击时的高亮边框 */
     resize: none; /* 禁止用户调整文本框大小 */
+    overflow: hidden; /* 去掉滚动条 */
 
 }
 
@@ -311,14 +320,17 @@ textarea.focused {
     background-size: contain;
 }
 
-#like-icon {
-    width: 50px; /* Set your preferred size */
-    height: auto;
+.like-count {
+    position: absolute;
+    left: 30px; /* 距离右边10px */
+    top: 40px; /* 垂直居中 */
+    transform: translateY(-50%);
 }
-
-#like-count {
-
-    font-size: 16px;
+.comment-count {
+    position: absolute;
+    left: 85px; /* 距离右边10px */
+    top: 40px; /* 垂直居中 */
+    transform: translateY(-50%);
 }
 
 /* Class to disable hover effect */

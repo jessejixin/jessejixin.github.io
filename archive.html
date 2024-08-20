@@ -61,7 +61,8 @@
                         </form>
                         <div class="like-container">
                             <button id="like-button-item1" onclick="handleLike('item1')" class="like-button"></button>
-                            <span id="like-count-item1">Loading likes...</span>
+                            <span id="like-count-item1" class="like-count">...</span>
+                            <span id="comment-count-item1" class="comment-count">2</span>
                         </div>
                         <p class="result"></p>
                 </div>
@@ -94,7 +95,8 @@
                         </form>
                         <div class="like-container">
                             <button id="like-button-item2" onclick="handleLike('item2')" class="like-button"></button>
-                            <span id="like-count-item2">Loading likes...</span>
+                            <span id="like-count-item2" class="like-count">...</span>
+                            <span id="comment-count-item2" class="comment-count">2</span>
                         </div>
                         <p class="result"></p>
                 </div>
@@ -127,7 +129,8 @@
                         </form>
                         <div class="like-container">
                             <button id="like-button-item3" onclick="handleLike('item3')" class="like-button"></button>
-                            <span id="like-count-item3">Loading likes...</span>
+                            <span id="like-count-item3"class="like-count">...</span>
+                            <span id="comment-count-item3" class="comment-count">2</span>
                         </div>
                         <p class="result"></p>
                 </div>
@@ -178,7 +181,8 @@
                         </form>
                         <div class="like-container">
                             <button id="like-button-item4" onclick="handleLike('item4')" class="like-button"></button>
-                            <span id="like-count-item4">Loading likes...</span>
+                            <span id="like-count-item4"class="like-count">...</span>
+                            <span id="comment-count-item4" class="comment-count">2</span>
                         </div>
                         <p class="result"></p>
                 </div>
@@ -212,7 +216,8 @@
                         </form>
                         <div class="like-container">
                             <button id="like-button-item5" onclick="handleLike('item5')" class="like-button"></button>
-                            <span id="like-count-item5">Loading likes...</span>
+                            <span id="like-count-item5" class="like-count">...</span>
+                            <span id="comment-count-item5" class="comment-count">2</span>
                         </div>
                         <p class="result"></p>
                 </div>
@@ -246,7 +251,8 @@
                         </form>
                         <div class="like-container">
                             <button id="like-button-item6" onclick="handleLike('item6')" class="like-button"></button>
-                            <span id="like-count-item6">Loading likes...</span>
+                            <span id="like-count-item6" class="like-count">...</span>
+                            <span id="comment-count-item6" class="comment-count">2</span>
                         </div>
                         <p class="result"></p>
                 </div>
@@ -297,7 +303,8 @@
                         </form>
                         <div class="like-container">
                             <button id="like-button-item7" onclick="handleLike('item7')" class="like-button"></button>
-                            <span id="like-count-item7">Loading likes...</span>
+                            <span id="like-count-item7" class="like-count">...</span>
+                            <span id="comment-count-item7" class="comment-count">2</span>
                         </div>
                         <p class="result"></p>
                 </div>
@@ -331,7 +338,8 @@
                         </form>
                         <div class="like-container">
                             <button id="like-button-item8" onclick="handleLike('item8')" class="like-button"></button>
-                            <span id="like-count-item8">Loading likes...</span>
+                            <span id="like-count-item8" class="like-count">...</span>
+                            <span id="comment-count-item8" class="comment-count">2</span>
                         </div>
                         <p class="result"></p>
                 </div>
@@ -365,7 +373,8 @@
                         </form>
                         <div class="like-container">
                             <button id="like-button-item9" onclick="handleLike('item9')" class="like-button"></button>
-                            <span id="like-count-item9">Loading likes...</span>
+                            <span id="like-count-item9" class="like-count">...</span>
+                            <span id="comment-count-item9" class="comment-count">2</span>
                         </div>
                         <p class="result"></p>
                 </div>
@@ -416,7 +425,8 @@
                         </form>
                         <div class="like-container">
                             <button id="like-button-item10" onclick="handleLike('item10')" class="like-button"></button>
-                            <span id="like-count-item10">Loading likes...</span>
+                            <span id="like-count-item10" class="like-count">...</span>
+                            <span id="comment-count-item10" class="comment-count">2</span>
                         </div>
                         <p class="result"></p>
                 </div>
@@ -450,7 +460,8 @@
                         </form>
                         <div class="like-container">
                             <button id="like-button-item11" onclick="handleLike('item11')" class="like-button"></button>
-                            <span id="like-count-item11">Loading likes...</span>
+                            <span id="like-count-item11" class="like-count">...</span>
+                            <span id="comment-count-item11" class="comment-count">2</span>
                         </div>
                         <p class="result"></p>
                 </div>
@@ -484,7 +495,8 @@
                         </form>
                         <div class="like-container">
                             <button id="like-button-item12" onclick="handleLike('item12')" class="like-button"></button>
-                            <span id="like-count-item12">Loading likes...</span>
+                            <span id="like-count-item12" class="like-count">...</span>
+                            <span id="comment-count-item12" class="comment-count">2</span>
                         </div>
                         <p class="result"></p>
                 </div>
@@ -507,10 +519,10 @@
             try {
             const response = await fetch('/.netlify/functions/getlikes');
             const data = await response.json();
-            document.getElementById(`like-count-${itemId}`).textContent = `${data[itemId] || 0} Likes`;
+            document.getElementById(`like-count-${itemId}`).textContent = `${data[itemId] || 0}`;
             } catch (error) {
             console.error('Error fetching likes:', error);
-            document.getElementById(`like-count-${itemId}`).textContent = 'Error loading likes';
+            // document.getElementById(`like-count-${itemId}`).textContent = 'Error loading';
             }
         }
 
@@ -523,12 +535,12 @@
             });
 
             const data = await response.json();
-            document.getElementById(`like-count-${itemId}`).textContent = `${data[itemId]} Likes`;
+            document.getElementById(`like-count-${itemId}`).textContent = `${data[itemId]}`;
             // 改变按钮的样式，显示爱心图片
             document.getElementById(`like-button-${itemId}`).classList.add('liked');
             } catch (error) {
             console.error('Error updating like:', error);
-            document.getElementById(`like-count-${itemId}`).textContent = 'Error updating like';
+            // document.getElementById(`like-count-${itemId}`).textContent = 'Error updating';
             }
         }
 
