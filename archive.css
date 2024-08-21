@@ -218,6 +218,24 @@ body {
     right: 10px;
 }
 
+.audio-container {
+    position: absolute;
+    margin-left: 80px;
+    margin-top: 600px;
+    z-index: 1000;
+    height: 10px;
+}
+audio {
+    width: 300px; /* 设置音频播放器的宽度 */
+    height: 20px; /* 设置音频播放器的高度 */
+    color: white;
+}
+audio::-webkit-media-controls-panel {
+    background-color: white; /* 设置背景透明 */
+    border: none; /* 去掉边框 */
+    
+}
+
 /* Comments section */
 .modal-comments {
     padding-top: 50px;
