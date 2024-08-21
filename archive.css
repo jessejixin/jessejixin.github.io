@@ -93,8 +93,7 @@ body {
     opacity: 0; /* Hidden by default */
     transition: opacity 0.5s ease-in-out; /* Transition effect for hover */
     z-index: 10; /* Ensure it is above Bed images */
-    /* cursor: url('Icons/pointer.png') 16 16, auto;Change cursor to pointer on hover */
-    cursor: pointer;
+    cursor: url('Icons/pointer.png') , auto;
 
 }
 
