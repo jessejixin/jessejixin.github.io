@@ -187,6 +187,7 @@ body {
 
 /* Style for images inside carousel-container */
 .carousel-container img {
+    padding-bottom: 30px;
     padding-left: 40px;
     padding-right: 30px;
     width: 85%; /* Make images take up full width of the container */
