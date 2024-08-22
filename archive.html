@@ -21,15 +21,15 @@
     <div class="Content">
         <div class="image-container">
             <img class="Bed" src="./BedImage/Bed1R.jpg" />
-            <img class="hiddenInfo" src="./BedImage/Bed1P.jpg" onclick="openModal('bed1')" />
+            <img class="hiddenInfo" src="./BedImage/Bed1P.jpg" onclick="openModal('bed1','item1')" />
         </div>
         <div class="image-container">
             <img class="Bed" src="./BedImage/Bed2R.jpg" />
-            <img class="hiddenInfo" src="./BedImage/Bed2P.jpg" onclick="openModal('bed2')" />
+            <img class="hiddenInfo" src="./BedImage/Bed2P.jpg" onclick="openModal('bed2','item2')" />
         </div>
         <div class="image-container">
             <img class="Bed" src="./BedImage/Bed3R.jpg" />
-            <img class="hiddenInfo" src="./BedImage/Bed3P.jpg" onclick="openModal('bed3')" />
+            <img class="hiddenInfo" src="./BedImage/Bed3P.jpg" onclick="openModal('bed3','item3')" />
         </div>
     </div>
     
@@ -53,10 +53,7 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
-                <div class="modal-comments">
-                    <p>江南意面王：有无睡前酒推荐</p>
-                    <p>Another comment goes here.</p>
-                    <!-- 添加更多评论 -->
+                <div class="modal-comments" data-item-id="item1"></div>
                     <div class="form-container">
                         <form id="comment-form-item1" onsubmit="submitComment(event, 'item1')">
                             <div class="textarea-container">
@@ -93,10 +90,7 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
-                <div class="modal-comments">
-                    <p>This is a comment about the image.</p>
-                    <p>Another comment goes here.</p>
-                    <!-- 添加更多评论 -->
+                <div class="modal-comments" data-item-id="item2"></div>
                     <div class="form-container">
                         <form id="comment-form-item2" onsubmit="submitComment(event, 'item2')">
                             <div class="textarea-container">
@@ -128,15 +122,10 @@
                 <button class="carousel-next">&#10095;</button>
             </div>
             <div class="audio-container">
-                <audio controls>
-                    <source src="audio/audio3.m4a" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
+               
             </div>
-                <div class="modal-comments">
-                    <p>This is a comment about the image.</p>
-                    <p>Another comment goes here.</p>
-                    <!-- 添加更多评论 -->
+                <div class="modal-comments" data-item-id="item3"></div>
+
                     <div class="form-container">
                         <form id="comment-form-item3" onsubmit="submitComment(event, 'item3')">
                             <div class="textarea-container">
@@ -159,15 +148,15 @@
     <div class="Content">
         <div class="image-container">
             <img class="Bed" src="./BedImage/Bed4R.jpg" />
-            <img class="hiddenInfo" src="./BedImage/Bed4P.jpg" onclick="openModal('bed4');" />
+            <img class="hiddenInfo" src="./BedImage/Bed4P.jpg" onclick="openModal('bed4','item4');" />
         </div>
         <div class="image-container">
             <img class="Bed" src="./BedImage/Bed5R.jpg" />
-            <img class="hiddenInfo" src="./BedImage/Bed5P.jpg" onclick="openModal('bed5')" />
+            <img class="hiddenInfo" src="./BedImage/Bed5P.jpg" onclick="openModal('bed5','item5')" />
         </div>
         <div class="image-container">
             <img class="Bed" src="./BedImage/Bed6R.jpg" />
-            <img class="hiddenInfo" src="./BedImage/Bed6P.jpg" onclick="openModal('bed6')" />
+            <img class="hiddenInfo" src="./BedImage/Bed6P.jpg" onclick="openModal('bed6','item6')" />
         </div>
     </div>
 
@@ -191,10 +180,7 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
-                <div class="modal-comments">
-                    <p>This is a comment about the image.</p>
-                    <p>Another comment goes here.</p>
-                    <!-- 添加更多评论 -->
+                <div class="modal-comments" data-item-id="item4"></div>
                     <div class="form-container">
                         <form id="comment-form-item4" onsubmit="submitComment(event, 'item4')">
                             <div class="textarea-container">
@@ -232,10 +218,7 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
-                <div class="modal-comments">
-                    <p>This is a comment about the image.</p>
-                    <p>Another comment goes here.</p>
-                    <!-- 添加更多评论 -->
+                <div class="modal-comments" data-item-id="item5"></div>
                     <div class="form-container">
                         <form id="comment-form-item5" onsubmit="submitComment(event, 'item5')">
                             <div class="textarea-container">
@@ -273,10 +256,7 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
-                <div class="modal-comments">
-                    <p>This is a comment about the image.</p>
-                    <p>Another comment goes here.</p>
-                    <!-- 添加更多评论 -->
+                <div class="modal-comments" data-item-id="item6"></div>
                     <div class="form-container">
                         <form id="comment-form-item6" onsubmit="submitComment(event, 'item6')">
                             <div class="textarea-container">
@@ -299,15 +279,15 @@
     <div class="Content">
         <div class="image-container">
             <img class="Bed" src="./BedImage/Bed7R.jpg" />
-            <img class="hiddenInfo" src="./BedImage/Bed7P.jpg" onclick="openModal('bed7');" />
+            <img class="hiddenInfo" src="./BedImage/Bed7P.jpg" onclick="openModal('bed7','item7');" />
         </div>
         <div class="image-container">
             <img class="Bed" src="./BedImage/Bed8R.jpg" />
-            <img class="hiddenInfo" src="./BedImage/Bed8P.jpg" onclick="openModal('bed8')" />
+            <img class="hiddenInfo" src="./BedImage/Bed8P.jpg" onclick="openModal('bed8','item8')" />
         </div>
         <div class="image-container">
             <img class="Bed" src="./BedImage/Bed9R.jpg" />
-            <img class="hiddenInfo" src="./BedImage/Bed9P.jpg" onclick="openModal('bed9')" />
+            <img class="hiddenInfo" src="./BedImage/Bed9P.jpg" onclick="openModal('bed9','item9')" />
         </div>
     </div>
 
@@ -331,10 +311,7 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
-                <div class="modal-comments">
-                    <p>This is a comment about the image.</p>
-                    <p>Another comment goes here.</p>
-                    <!-- 添加更多评论 -->
+                <div class="modal-comments" data-item-id="item7"></div>
                     <div class="form-container">
                         <form id="comment-form-item7" onsubmit="submitComment(event, 'item7')">
                             <div class="textarea-container">
@@ -367,15 +344,9 @@
                 <button class="carousel-next">&#10095;</button>
             </div>
             <div class="audio-container">
-                <audio controls>
-                    <source src="audio/audio8.m4a" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
+               
             </div>
-                <div class="modal-comments">
-                    <p>This is a comment about the image.</p>
-                    <p>Another comment goes here.</p>
-                    <!-- 添加更多评论 -->
+                <div class="modal-comments" data-item-id="item8"></div>
                     <div class="form-container">
                         <form id="comment-form-item8" onsubmit="submitComment(event, 'item8')">
                             <div class="textarea-container">
@@ -413,10 +384,7 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
-                <div class="modal-comments">
-                    <p>This is a comment about the image.</p>
-                    <p>Another comment goes here.</p>
-                    <!-- 添加更多评论 -->
+                <div class="modal-comments" data-item-id="item9"></div>
                     <div class="form-container">
                         <form id="comment-form-item9" onsubmit="submitComment(event, 'item9')">
                             <div class="textarea-container">
@@ -439,15 +407,15 @@
     <div class="Content">
         <div class="image-container">
             <img class="Bed" src="./BedImage/Bed10R.jpg" />
-            <img class="hiddenInfo" src="./BedImage/Bed10P.jpg" onclick="openModal('bed10');" />
+            <img class="hiddenInfo" src="./BedImage/Bed10P.jpg" onclick="openModal('bed10','item10');" />
         </div>
         <div class="image-container">
             <img class="Bed" src="./BedImage/Bed11R.jpg" />
-            <img class="hiddenInfo" src="./BedImage/Bed11P.jpg" onclick="openModal('bed11')" />
+            <img class="hiddenInfo" src="./BedImage/Bed11P.jpg" onclick="openModal('bed11','item11')" />
         </div>
         <div class="image-container">
             <img class="Bed" src="./BedImage/Bed12R.jpg" />
-            <img class="hiddenInfo" src="./BedImage/Bed12P.jpg" onclick="openModal('bed12')" />
+            <img class="hiddenInfo" src="./BedImage/Bed12P.jpg" onclick="openModal('bed12','item12')" />
         </div>
     </div>
 
@@ -466,15 +434,9 @@
                 <button class="carousel-next">&#10095;</button>
             </div>
             <div class="audio-container">
-                <audio controls>
-                    <source src="audio/audio10.m4a" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
+
             </div>
-                <div class="modal-comments">
-                    <p>This is a comment about the image.</p>
-                    <p>Another comment goes here.</p>
-                    <!-- 添加更多评论 -->
+                <div class="modal-comments" data-item-id="item10"></div>
                     <div class="form-container">
                         <form id="comment-form-item10" onsubmit="submitComment(event, 'item10')">
                             <div class="textarea-container">
@@ -512,10 +474,7 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
-                <div class="modal-comments">
-                    <p>This is a comment about the image.</p>
-                    <p>Another comment goes here.</p>
-                    <!-- 添加更多评论 -->
+            <div class="modal-comments" data-item-id="item11"></div>
                     <div class="form-container">
                         <form id="comment-form-item11" onsubmit="submitComment(event, 'item11')">
                             <div class="textarea-container">
@@ -548,15 +507,9 @@
                 <button class="carousel-next">&#10095;</button>
             </div>
             <div class="audio-container">
-                <audio controls>
-                    <source src="audio/audio12.m4a" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
+
             </div>
-                <div class="modal-comments">
-                    <p>This is a comment about the image.</p>
-                    <p>Another comment goes here.</p>
-                    <!-- 添加更多评论 -->
+            <div class="modal-comments" data-item-id="item12"></div>
                     <div class="form-container">
                         <form id="comment-form-item12" onsubmit="submitComment(event, 'item12')">
                             <div class="textarea-container">
@@ -616,15 +569,6 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const itemIds = ['item1', 'item2', 'item3','item4', 'item5', 'item6','item7', 'item8', 'item9','item10', 'item11', 'item12'];
-
-            itemIds.forEach(itemId => {
-                loadLikes(itemId);
-            });
-        });
-
-
 
         async function submitComment(event, itemId) {
             event.preventDefault();
@@ -637,6 +581,9 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ item_id: itemId, name: name, comment: comment }),
                 });
+                if (!response.ok) {
+                    throw new Error('Could not submit comment');
+                }
 
                 const data = await response.json();
                 console.log('Response data:', data);
@@ -646,18 +593,55 @@
                     document.getElementById(`comment-form-${itemId}`).reset();
                     alert('Comment submitted successfully!');
                 }
+                 // Fetch and refresh the comments list
+                 await loadComments(itemId);
             } catch (error) {
                 console.error('Error submitting comment:', error);
             }
         }
+        async function loadComments(itemId) {
+            try {
+                const response = await fetch(`/.netlify/functions/getComments?itemId=${itemId}`);
+                const comments = await response.json();
+            // 获取评论列表的容器
+            const commentsContainer = document.querySelector(`.modal-comments[data-item-id="${itemId}"]`);
+                    if (!commentsContainer) {
+                    console.error('Comments container not found');
+                    return;
+                }
+                 // 清空旧的评论内容
+                commentsContainer.innerHTML = '';
 
+                // 插入新的评论内容
+                comments.forEach(comment => {
+                    const commentElement = document.createElement('p');
+                    commentElement.textContent = `${comment.name}: ${comment.comment}`;
+                    commentsContainer.appendChild(commentElement);
+                });
+
+            } catch (error) {
+                console.error('Error fetching comments:', error);
+            }
+        }
         
-        function openModal(id) {
-            document.getElementById(id).style.display = "block";
+        // function openModal(id) {
+        //     document.getElementById(id).style.display = "block";
+        //     document.body.classList.add('disable-hover'); // Disable hover effect
+        //     document.body.style.overflow = "hidden"; // 禁用页面滚动
+
+        // }
+        function openModal(modalId, itemId) {
+            // 显示模态窗口
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'block';
             document.body.classList.add('disable-hover'); // Disable hover effect
             document.body.style.overflow = "hidden"; // 禁用页面滚动
 
+            // 加载评论
+            loadComments(itemId);
+            loadLikes(itemId);
         }
+
 
         function closeModal(id) {
             document.getElementById(id).style.display = "none";

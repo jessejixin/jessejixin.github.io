@@ -12,7 +12,7 @@ exports.handler = async (event) => {
                     item_id: data.item_id,
                     name: data.name,
                     comment: data.comment,
-                    timestamp: new Date().toISOString()
+                    timestamp: new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toISOString()
                 }
             })
         );

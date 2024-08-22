@@ -342,12 +342,14 @@ textarea.focused {
 
 .like-count {
     position: absolute;
+    color:gray;
     left: 30px; /* 距离右边10px */
     top: 40px; /* 垂直居中 */
     transform: translateY(-50%);
 }
 .comment-count {
     position: absolute;
+    color: gray;
     left: 85px; /* 距离右边10px */
     top: 40px; /* 垂直居中 */
     transform: translateY(-50%);
