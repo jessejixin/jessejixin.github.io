@@ -28,7 +28,9 @@
 .nav-container .about {
     background-image: url('Icons/about.png');
 }
-
+.nav-container .game {
+    background-image: url('Icons/game.png');
+}
 .nav-container a:hover {
     transform: scale(1.10); /* Slightly enlarge the image on hover */
 }
