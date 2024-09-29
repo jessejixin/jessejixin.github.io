@@ -37,20 +37,32 @@
 }
 
 body {
-    min-height: 150vh; /* 150% of the viewport height */
+    min-height: 110vh; /* 150% of the viewport height */
 }
 
+.Content {
+    display: flex; /* Use flexbox to arrange child elements in a row */
+    justify-content: space-between; /* Optional: Adjusts spacing between the elements */
+    align-items: flex-start; /* Align items at the top */
+}
 
+#unity-container {
+    margin-top: 6%;
+    width: 70%; /* Adjust the width to your preference */
+    margin-left: 4%;
+}
 
-#content img {
-    width: 100%; /* Make the image responsive */
-    max-width: 500px; /* Set a maximum width for the image */
+.image-container {
+    width: 30%; /* Adjust the width to your preference */
+    margin-top: 6%;
+    margin-right: 4%;
+}
+
+.Info {
+    width: 100%; /* Ensure the image is responsive within the container */
     height: auto; /* Maintain aspect ratio */
-    padding: 0px; /* Default padding */
-    display: block; /* Make the image a block element */
-    margin: 0 auto; /* Center the image */
 }
-
+/* 
 #unity-container { position:absolute; margin-top: 250px;}
 #unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
 #unity-container.unity-mobile { position: fixed; width: 100%; height: 100% }
@@ -65,4 +77,4 @@ body {
 #unity-webgl-logo { float:left; width: 204px; height: 38px; background: url('webgl-logo.png') no-repeat center }
 #unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
 #unity-fullscreen-button { cursor:pointer; float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
-#unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+#unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none } */

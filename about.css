@@ -1,28 +1,56 @@
-/* 新增样式 */
+@font-face {
+    font-family: 'exo'; /* 给字体起个名字 */
+    src: url('fonts/Exo-Regular.otf') format('opentype'); /* 路径根据你项目中的位置调整 */
+    font-weight: normal;
+    font-style: normal;
+}
+
 #content {
-    /* 居中 */
-    margin: 0 auto;
-    width: 700px;
+    display: flex;
+    margin-top: 80px; /* Position at the top of the page */
+    margin-left: 10%;
+    gap: 40px;
+}
+.image-and-link {
+    flex: 0 0 700px; /* 固定宽度200px */
 }
 
-#content img {
-    width: 100%; /* Make the image responsive */
-    max-width: 500px; /* Set a maximum width for the image */
-    height: auto; /* Maintain aspect ratio */
-    padding: 100px; /* Default padding */
-    display: block; /* Make the image a block element */
-    margin: 0 auto; /* Center the image */
+.gallery img {
+    width: auto; /* Set image width (you can adjust this as needed) */
+    height: 250px; /* Maintain aspect ratio */
+    margin-inline: 30px; /* Add some space between the images */
+}
+.text-content {
+    max-width: calc(100% - 700px); /* 100% 减去左侧图片的宽度 */
+    line-height: 1.6;
+    text-align: justify;
+    margin-right:15%;
 }
 
-#content .text {
-    flex: 1;
-    padding-left: 20px;
+/* When no image is present, make text occupy full width */
+#content.no-image .text-content {
+    max-width: 100%; /* Allow text to take full width */
+    width: 100%;
+}
+
+.link {
+    margin-top: 20px; /* Add some space above the links */
+    display: flex; /* Flexbox layout for horizontal arrangement */
+    gap: 20px; /* Add space between the links */
+    margin-left: 25%;
+}
+
+.link img {
+    width: 50px; /* Set the size of the link icons */
+    height: 50px; /* Maintain aspect ratio */
+    margin-inline: 30px;
 }
 
 
 /* 导航栏 */
 body {
-    font-family: Arial, sans-serif;
+    font-family:  exo, sans-serif;
+    font-size:x-large;
     margin: 0;
     padding: 0;
 }
@@ -62,23 +90,4 @@ body {
 
 .nav-container a:hover {
     transform: scale(1.10); /* Slightly enlarge the image on hover */
-}
-
-/* 导航栏结束 */
-
-.link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.link a {
-    margin: 7px;
-    /* 可根据需要调整间距 */
-}
-
-.link img {
-    width: 50px;
-    height: 50px;
 }
