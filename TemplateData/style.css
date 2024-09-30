@@ -48,18 +48,18 @@ body {
 
 #unity-container {
     margin-top: 6%;
-    width: 70%; /* Adjust the width to your preference */
-    margin-left: 4%;
+    margin-left:5%;
 }
 
 .image-container {
-    width: 30%; /* Adjust the width to your preference */
+    max-width: 30%; /* Adjust the width to your preference */
     margin-top: 6%;
-    margin-right: 4%;
+    margin-left: 4%;
+    margin-right: 8%;
 }
 
 .Info {
-    width: 100%; /* Ensure the image is responsive within the container */
+    width: 300px; /* Ensure the image is responsive within the container */
     height: auto; /* Maintain aspect ratio */
 }
 /* 

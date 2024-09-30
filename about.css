@@ -5,40 +5,6 @@
     font-style: normal;
 }
 
-#content {
-    display: flex;
-    margin-top: 80px; /* Position at the top of the page */
-    margin-left: 10%;
-    gap: 40px;
-}
-.image-and-link {
-    flex: 0 0 700px; /* 固定宽度200px */
-}
-
-.gallery img {
-    width: auto; /* Set image width (you can adjust this as needed) */
-    height: 250px; /* Maintain aspect ratio */
-    margin-inline: 30px; /* Add some space between the images */
-}
-.text-content {
-    max-width: calc(100% - 700px); /* 100% 减去左侧图片的宽度 */
-    line-height: 1.6;
-    text-align: justify;
-    margin-right:15%;
-}
-
-/* When no image is present, make text occupy full width */
-#content.no-image .text-content {
-    max-width: 100%; /* Allow text to take full width */
-    width: 100%;
-}
-
-.link {
-    margin-top: 20px; /* Add some space above the links */
-    display: flex; /* Flexbox layout for horizontal arrangement */
-    gap: 20px; /* Add space between the links */
-    margin-left: 25%;
-}
 
 .link img {
     width: 50px; /* Set the size of the link icons */
@@ -46,6 +12,13 @@
     margin-inline: 30px;
 }
 
+p{
+   margin-left: 11%; 
+   max-width: 75%; 
+   text-align: justify; 
+   margin-right: 11%;
+   line-height: 1.6;
+}
 
 /* 导航栏 */
 body {
@@ -54,6 +27,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .nav-container {
     background-color: #ffff;
     padding: 10px 0;
