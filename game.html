@@ -19,31 +19,32 @@
           </div>
       </nav>
 
-    <div class="Content">
-      <div id="unity-container" class="unity-desktop">
-        <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-        <div id="unity-loading-bar">
-          <div id="unity-logo"></div>
-          <div id="unity-progress-bar-empty">
-            <div id="unity-progress-bar-full"></div>
-          </div>
+
+      <div style="display: flex; justify-content: space-between;">
+        <div id="unity-container" class="unity-desktop" style="width: 60%;">
+            <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+            <div id="unity-loading-bar">
+                <div id="unity-logo"></div>
+                <div id="unity-progress-bar-empty">
+                    <div id="unity-progress-bar-full"></div>
+                </div>
+            </div>
+            <div id="unity-warning"> </div>
+            <div id="unity-footer">
+                <div id="unity-webgl-logo"></div>
+                <div id="unity-fullscreen-button"></div>
+                <div id="unity-build-title"></div>
+            </div>
         </div>
-        <div id="unity-warning"> </div>
-        <div id="unity-footer">
-          <div id="unity-webgl-logo"></div>
-          <div id="unity-fullscreen-button"></div>
-          <div id="unity-build-title"></div>
+    
+        <div class="image-container" style="width:29%; text-align: left; margin-top: 6%;">
+            <img class="Info" src="./Image/instructions1.png" style="display: block; width: auto; margin: 0; padding: 0; height: 40px;" />
+            <img class="Info" src="./Image/instructions2.png" style="display: block; width: auto; margin: 0; padding: 0; height: 40px;" />
+            <img class="Info" src="./Image/instructions4.png" style="display: block; width: auto; margin: 0; padding: 0; height: 40px;" />
+            <img class="Info" src="./Image/instructions5.png" style="display: block; width: auto; margin: 0; padding: 0; height: 37px;" />
         </div>
-      </div>
-      <div class="image-container">
-        <img class="Info" src="./Image/instructions1.png" />
-        <img class="Info" src="./Image/instructions2.png" />
-        <img class="Info" src="./Image/instructions4.png" />
-        <img class="Info" style="height:37px;"
-        src="./Image/instructions5.png" />
     </div>
-  </div>
-  
+
 
 
     <script>

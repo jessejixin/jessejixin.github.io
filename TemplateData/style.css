@@ -40,28 +40,14 @@ body {
     min-height: 110vh; /* 150% of the viewport height */
 }
 
-.Content {
-    display: flex; /* Use flexbox to arrange child elements in a row */
-    justify-content: space-between; /* Optional: Adjusts spacing between the elements */
-    align-items: flex-start; /* Align items at the top */
-}
+
 
 #unity-container {
     margin-top: 6%;
     margin-left:5%;
 }
 
-.image-container {
-    max-width: 30%; /* Adjust the width to your preference */
-    margin-top: 6%;
-    margin-left: 4%;
-    margin-right: 8%;
-}
 
-.Info {
-    width: auto; 
-    height: 40px;
-}
 /* 
 #unity-container { position:absolute; margin-top: 250px;}
 #unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
