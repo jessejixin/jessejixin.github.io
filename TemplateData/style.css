@@ -59,8 +59,8 @@ body {
 }
 
 .Info {
-    width: 300px; /* Ensure the image is responsive within the container */
-    height: auto; /* Maintain aspect ratio */
+    width: auto; 
+    height: 40px;
 }
 /* 
 #unity-container { position:absolute; margin-top: 250px;}
